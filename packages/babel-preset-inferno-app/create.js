@@ -88,7 +88,7 @@ module.exports = function (api, opts, env) {
         },
       ],
       [
-        require('@babel/preset-inferno').default,
+        require('babel-preset-inferno-app').default,
         {
           // Adds component stack to warning messages
           // Adds __self attribute to JSX which Inferno will use for some warnings
