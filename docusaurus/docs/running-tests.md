@@ -3,17 +3,17 @@ id: running-tests
 title: Running Tests
 ---
 
-> Note: this feature is available with `react-scripts@0.3.0` and higher.
+> Note: this feature is available with `inferno-scripts@0.3.0` and higher.
 
-> [Read the migration guide to learn how to enable it in older projects!](https://github.com/facebook/create-react-app/blob/main/CHANGELOG-0.x.md#migrating-from-023-to-030)
+> [Read the migration guide to learn how to enable it in older projects!](https://github.com/facebook/create-inferno-app/blob/main/CHANGELOG-0.x.md#migrating-from-023-to-030)
 
-Create React App uses [Jest](https://jestjs.io/) as its test runner. To prepare for this integration, we did a [major revamp](https://jestjs.io/blog/2016/09/01/jest-15.html) of Jest so if you heard bad things about it years ago, give it another try.
+Create Inferno App uses [Jest](https://jestjs.io/) as its test runner. To prepare for this integration, we did a [major revamp](https://jestjs.io/blog/2016/09/01/jest-15.html) of Jest so if you heard bad things about it years ago, give it another try.
 
 Jest is a Node-based runner. This means that the tests always run in a Node environment and not in a real browser. This lets us enable fast iteration speed and prevent flakiness.
 
 While Jest provides browser globals such as `window` thanks to [jsdom](https://github.com/tmpvar/jsdom), they are only approximations of the real browser behavior. Jest is intended to be used for unit tests of your logic and your components rather than the DOM quirks.
 
-We recommend that you use a separate tool for browser end-to-end tests if you need them. They are beyond the scope of Create React App.
+We recommend that you use a separate tool for browser end-to-end tests if you need them. They are beyond the scope of Create Inferno App.
 
 ## Filename Conventions
 
@@ -71,13 +71,13 @@ There is a broad spectrum of component testing techniques. They range from a “
 Different projects choose different testing tradeoffs based on how often components change, and how much logic they contain. If you haven’t decided on a testing strategy yet, we recommend that you start with creating basic smoke tests for your components:
 
 ```js
-import React from 'react';
-import ReactDOM from 'react-dom';
+import Inferno from 'inferno';
+import InfernoDOM from 'inferno-dom';
 import App from './App';
 
 it('renders without crashing', () => {
   const div = document.createElement('div');
-  ReactDOM.render(<App />, div);
+  InfernoDOM.render(<App />, div);
 });
 ```
 
@@ -85,48 +85,48 @@ This test mounts a component and makes sure that it didn’t throw during render
 
 When you encounter bugs caused by changing components, you will gain a deeper insight into which parts of them are worth testing in your application. This might be a good time to introduce more specific tests asserting specific expected output or behavior.
 
-### React Testing Library
+### Inferno Testing Library
 
-If you’d like to test components in isolation from the child components they render, we recommend using `react-testing-library`. [`react-testing-library`](https://github.com/testing-library/react-testing-library) is a library for testing React components in a way that resembles the way the components are used by end users. It is well suited for unit, integration, and end-to-end testing of React components and applications. It works more directly with DOM nodes, and therefore it's recommended to use with [`jest-dom`](https://github.com/testing-library/jest-dom) for improved assertions.
+If you’d like to test components in isolation from the child components they render, we recommend using `inferno-testing-library`. [`inferno-testing-library`](https://github.com/testing-library/inferno-testing-library) is a library for testing Inferno components in a way that resembles the way the components are used by end users. It is well suited for unit, integration, and end-to-end testing of Inferno components and applications. It works more directly with DOM nodes, and therefore it's recommended to use with [`jest-dom`](https://github.com/testing-library/jest-dom) for improved assertions.
 
-To install `react-testing-library` and `jest-dom`, you can run:
+To install `inferno-testing-library` and `jest-dom`, you can run:
 
 ```sh
-npm install --save @testing-library/react @testing-library/jest-dom
+npm install --save @testing-library/inferno @testing-library/jest-dom
 ```
 
 Alternatively you may use `yarn`:
 
 ```sh
-yarn add @testing-library/react @testing-library/jest-dom
+yarn add @testing-library/inferno @testing-library/jest-dom
 ```
 
 If you want to avoid boilerplate in your test files, you can create a [`src/setupTests.js`](#initializing-test-environment) file:
 
 ```js
-// react-testing-library renders your components to document.body,
+// inferno-testing-library renders your components to document.body,
 // this adds jest-dom's custom assertions
 import '@testing-library/jest-dom';
 ```
 
-Here's an example of using `react-testing-library` and `jest-dom` for testing that the `<App />` component renders "Learn React".
+Here's an example of using `inferno-testing-library` and `jest-dom` for testing that the `<App />` component renders "Learn Inferno".
 
 ```js
-import React from 'react';
-import { render, screen } from '@testing-library/react';
+import Inferno from 'inferno';
+import { render, screen } from '@testing-library/inferno';
 import App from './App';
 
 it('renders welcome message', () => {
   render(<App />);
-  expect(screen.getByText('Learn React')).toBeInTheDocument();
+  expect(screen.getByText('Learn Inferno')).toBeInTheDocument();
 });
 ```
 
-Learn more about the utilities provided by `react-testing-library` to facilitate testing asynchronous interactions as well as selecting form elements from the [`react-testing-library` documentation](https://testing-library.com/react) and [examples](https://codesandbox.io/s/github/kentcdodds/react-testing-library-examples).
+Learn more about the utilities provided by `inferno-testing-library` to facilitate testing asynchronous interactions as well as selecting form elements from the [`inferno-testing-library` documentation](https://testing-library.com/inferno) and [examples](https://codesandbox.io/s/github/kentcdodds/inferno-testing-library-examples).
 
 ## Using Third Party Assertion Libraries
 
-We recommend that you use `expect()` for assertions and `jest.fn()` for spies. If you are having issues with them please [file those against Jest](https://github.com/facebook/jest/issues/new), and we’ll fix them. We intend to keep making them better for React, supporting, for example, [pretty-printing React elements as JSX](https://github.com/facebook/jest/pull/1566).
+We recommend that you use `expect()` for assertions and `jest.fn()` for spies. If you are having issues with them please [file those against Jest](https://github.com/facebook/jest/issues/new), and we’ll fix them. We intend to keep making them better for Inferno, supporting, for example, [pretty-printing Inferno elements as JSX](https://github.com/facebook/jest/pull/1566).
 
 However, if you are used to other libraries, such as [Chai](https://www.chaijs.com/) and [Sinon](https://sinonjs.org/), or if you have existing code using them that you’d like to port over, you can import them normally like this:
 
@@ -139,7 +139,7 @@ and then use them in your tests like you normally do.
 
 ## Initializing Test Environment
 
-> Note: this feature is available with `react-scripts@0.4.0` and higher.
+> Note: this feature is available with `inferno-scripts@0.4.0` and higher.
 
 If your app uses a browser API that you need to mock in your tests or if you need a global setup before running your tests, add a `src/setupTests.js` to your project. It will be automatically executed before running your tests.
 
@@ -184,7 +184,7 @@ Note that tests run much slower with coverage so it is recommended to run it sep
 
 ### Configuration
 
-The [default configuration](https://github.com/facebook/create-react-app/blob/main/packages/react-scripts/scripts/utils/createJestConfig.js) that Create React App uses for Jest can be overridden by adding any of the following supported keys to a Jest config in your package.json.
+The [default configuration](https://github.com/facebook/create-inferno-app/blob/main/packages/inferno-scripts/scripts/utils/createJestConfig.js) that Create Inferno App uses for Jest can be overridden by adding any of the following supported keys to a Jest config in your package.json.
 
 Supported overrides:
 
@@ -264,7 +264,7 @@ script:
 
 ### CircleCI
 
-Follow [this article](https://medium.com/@knowbody/circleci-and-zeits-now-sh-c9b7eebcd3c1) to set up CircleCI with a Create React App project.
+Follow [this article](https://medium.com/@knowbody/circleci-and-zeits-now-sh-c9b7eebcd3c1) to set up CircleCI with a Create Inferno App project.
 
 ## On your own environment
 
@@ -312,23 +312,23 @@ If you know that none of your tests depend on [jsdom](https://github.com/tmpvar/
 
 ```diff
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
--   "test": "react-scripts test"
-+   "test": "react-scripts test --env=node"
+    "start": "inferno-scripts start",
+    "build": "inferno-scripts build",
+-   "test": "inferno-scripts test"
++   "test": "inferno-scripts test --env=node"
 ```
 
 To help you make up your mind, here is a list of APIs that **need jsdom**:
 
 - Any browser globals like `window` and `document`
-- [`ReactDOM.render()`](https://facebook.github.io/react/docs/top-level-api.html#reactdom.render)
-- [`TestUtils.renderIntoDocument()`](https://facebook.github.io/react/docs/test-utils.html#renderintodocument) ([a shortcut](https://github.com/facebook/react/blob/34761cf9a252964abfaab6faf74d473ad95d1f21/src/test/ReactTestUtils.js#L83-L91) for the above)
+- [`InfernoDOM.render()`](https://facebook.github.io/inferno/docs/top-level-api.html#infernodom.render)
+- [`TestUtils.renderIntoDocument()`](https://facebook.github.io/inferno/docs/test-utils.html#renderintodocument) ([a shortcut](https://github.com/facebook/inferno/blob/34761cf9a252964abfaab6faf74d473ad95d1f21/src/test/InfernoTestUtils.js#L83-L91) for the above)
 - [`mount()`](https://airbnb.io/enzyme/docs/api/mount.html) in [Enzyme](https://airbnb.io/enzyme/index.html)
-- [`render()`](https://testing-library.com/docs/react-testing-library/api/#render) in [React Testing Library](https://testing-library.com/docs/react-testing-library/intro/)
+- [`render()`](https://testing-library.com/docs/inferno-testing-library/api/#render) in [Inferno Testing Library](https://testing-library.com/docs/inferno-testing-library/intro/)
 
 In contrast, **jsdom is not needed** for the following APIs:
 
-- [`TestUtils.createRenderer()`](https://facebook.github.io/react/docs/test-utils.html#shallow-rendering) (shallow rendering)
+- [`TestUtils.createRenderer()`](https://facebook.github.io/inferno/docs/test-utils.html#shallow-rendering) (shallow rendering)
 - [`shallow()`](https://airbnb.io/enzyme/docs/api/shallow.html) in [Enzyme](https://airbnb.io/enzyme/index.html)
 
 Finally, jsdom is also not needed for [snapshot testing](https://jestjs.io/blog/2016/07/27/jest-14.html).
@@ -339,6 +339,6 @@ Snapshot testing is a feature of Jest that automatically generates text snapshot
 
 ## Editor Integration
 
-If you use [Visual Studio Code](https://code.visualstudio.com), there is a [Jest extension](https://github.com/orta/vscode-jest) which works with Create React App out of the box. This provides a lot of IDE-like features while using a text editor: showing the status of a test run with potential fail messages inline, starting and stopping the watcher automatically, and offering one-click snapshot updates.
+If you use [Visual Studio Code](https://code.visualstudio.com), there is a [Jest extension](https://github.com/orta/vscode-jest) which works with Create Inferno App out of the box. This provides a lot of IDE-like features while using a text editor: showing the status of a test run with potential fail messages inline, starting and stopping the watcher automatically, and offering one-click snapshot updates.
 
 ![VS Code Jest Preview](https://cloud.githubusercontent.com/assets/49038/20795349/a032308a-b7c8-11e6-9b34-7eeac781003f.png)

@@ -3,35 +3,35 @@ id: custom-templates
 title: Custom Templates
 ---
 
-> Note: this feature is available with `react-scripts@3.3.0` and higher.
+> Note: this feature is available with `inferno-scripts@3.3.0` and higher.
 
-Custom Templates enable you to select a template to create your project from, while still retaining all of the features of Create React App.
+Custom Templates enable you to select a template to create your project from, while still retaining all of the features of Create Inferno App.
 
-You'll notice that Custom Templates are always named in the format `cra-template-[template-name]`, however you only need to provide the `[template-name]` to the creation command.
+You'll notice that Custom Templates are always named in the format `cia-template-[template-name]`, however you only need to provide the `[template-name]` to the creation command.
 
-Scoped templates are also supported, under the name `@[scope-name]/cra-template` or `@[scope-name]/cra-template-[template-name]`, which can be installed via `@[scope]` and `@[scope]/[template-name]` respectively.
+Scoped templates are also supported, under the name `@[scope-name]/cia-template` or `@[scope-name]/cia-template-[template-name]`, which can be installed via `@[scope]` and `@[scope]/[template-name]` respectively.
 
 ```sh
-npx create-react-app my-app --template [template-name]
+npx create-inferno-app my-app --template [template-name]
 ```
 
 ## Finding custom templates
 
 We ship two templates by default:
 
-- [`cra-template`](https://github.com/facebook/create-react-app/tree/main/packages/cra-template)
-- [`cra-template-typescript`](https://github.com/facebook/create-react-app/tree/main/packages/cra-template-typescript)
+- [`cia-template`](https://github.com/facebook/create-inferno-app/tree/main/packages/cia-template)
+- [`cia-template-typescript`](https://github.com/facebook/create-inferno-app/tree/main/packages/cia-template-typescript)
 
-However, you can find many great community templates by searching for ["cra-template-\*"](https://www.npmjs.com/search?q=cra-template-*) on npm.
+However, you can find many great community templates by searching for ["cia-template-\*"](https://www.npmjs.com/search?q=cia-template-*) on npm.
 
 ## Building a template
 
-If you're interested in building a custom template, first take a look at how we've built [`cra-template`](https://github.com/facebook/create-react-app/tree/main/packages/cra-template).
+If you're interested in building a custom template, first take a look at how we've built [`cia-template`](https://github.com/facebook/create-inferno-app/tree/main/packages/cia-template).
 
 A template must have the following structure:
 
 ```
-cra-template-[template-name]/
+cia-template-[template-name]/
   README.md (for npm)
   template.json
   package.json
@@ -49,12 +49,12 @@ cra-template-[template-name]/
 To test a template locally, pass the file path to the directory of your template source using the `file:` prefix.
 
 ```sh
-npx create-react-app my-app --template file:../path/to/your/template/cra-template-[template-name]
+npx create-inferno-app my-app --template file:../path/to/your/template/cia-template-[template-name]
 ```
 
 ### The `template` folder
 
-This folder is copied to the user's app directory as Create React App installs. During this process, the file `gitignore` is renamed to `.gitignore`.
+This folder is copied to the user's app directory as Create Inferno App installs. During this process, the file `gitignore` is renamed to `.gitignore`.
 
 You can add whatever files you want in here, but you must have at least the files specified above.
 
@@ -78,13 +78,13 @@ Below is an example `template.json` file:
       "build-and-serve": "npm run build && npm run serve"
     },
     "eslintConfig": {
-      "extends": ["react-app", "plugin:jsx-a11y/recommended"],
+      "extends": ["inferno-app", "plugin:jsx-a11y/recommended"],
       "plugins": ["jsx-a11y"]
     }
   }
 }
 ```
 
-Any values you add for `"dependencies"` and `"scripts"` will be merged with the Create React App defaults. Values for any other keys will be used as-is, replacing any matching Create React App defaults.
+Any values you add for `"dependencies"` and `"scripts"` will be merged with the Create Inferno App defaults. Values for any other keys will be used as-is, replacing any matching Create Inferno App defaults.
 
 For convenience, we always replace `npm run` with `yarn` in your custom `"scripts"`, as well as in your `README` when projects are initialized with yarn.

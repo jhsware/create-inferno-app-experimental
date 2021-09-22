@@ -1,5 +1,5 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
+import Inferno from 'inferno';
+import InfernoDOM from 'inferno-dom';
 import App from './App';
 
-ReactDOM.render(<App />, document.getElementById('root'));
+InfernoDOM.render(<App />, document.getElementById('root'));

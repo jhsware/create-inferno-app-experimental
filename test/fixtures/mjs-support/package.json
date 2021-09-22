@@ -2,7 +2,6 @@
   "dependencies": {
     "graphql": "14.0.2",
     "react": "latest",
-    "react-dom": "latest",
     "serve": "10.0.2"
   }
 }

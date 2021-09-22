@@ -3,7 +3,7 @@ id: measuring-performance
 title: Measuring Performance
 ---
 
-By default, Create React App includes a performance relayer that allows you to measure and analyze
+By default, Create Inferno App includes a performance relayer that allows you to measure and analyze
 the performance of your application using different metrics.
 
 To measure any of the supported metrics, you only need to pass a function into the `reportWebVitals`
@@ -19,7 +19,7 @@ page. You can use it to log any of the results to the console or send to a parti
 ## Web Vitals
 
 [Web Vitals](https://web.dev/vitals/) are a set of useful metrics that aim to capture the user
-experience of a web page. In Create React App, a third-party library is used to measure these
+experience of a web page. In Create Inferno App, a third-party library is used to measure these
 metrics ([web-vitals](https://github.com/GoogleChrome/web-vitals)).
 
 To understand more about the object returned to the function when a metric value is calculated,

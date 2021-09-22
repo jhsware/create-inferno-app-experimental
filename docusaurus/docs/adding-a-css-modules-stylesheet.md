@@ -4,7 +4,7 @@ title: Adding a CSS Modules Stylesheet
 sidebar_label: Adding CSS Modules
 ---
 
-> Note: this feature is available with `react-scripts@2.0.0` and higher.
+> Note: this feature is available with `inferno-scripts@2.0.0` and higher.
 
 This project supports [CSS Modules](https://github.com/css-modules/css-modules) alongside regular stylesheets using the `[name].module.css` file naming convention. CSS Modules allows the scoping of CSS by automatically creating a unique classname of the format `[filename]\_[classname]\_\_[hash]`.
 
@@ -31,7 +31,7 @@ CSS Modules let you use the same CSS class name in different files without worry
 ## `Button.js`
 
 ```js
-import React, { Component } from 'react';
+import Inferno, { Component } from 'inferno';
 import styles from './Button.module.css'; // Import css modules stylesheet as styles
 import './another-stylesheet.css'; // Import regular stylesheet
 

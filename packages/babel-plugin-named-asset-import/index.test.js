@@ -6,7 +6,7 @@ pluginTester.default({
   pluginOptions: {
     loaderMap: {
       svg: {
-        ReactComponent: '@svgr/webpack?-svgo![path]',
+        InfernoComponent: '@svgr/webpack?-svgo![path]',
       },
     },
   },
@@ -33,18 +33,18 @@ pluginTester.default({
       code: 'import { logo } from "logo.svg";',
       output: 'import { logo } from "logo.svg";',
     },
-    svgReactComponentNamedImport: {
-      code: 'import { ReactComponent as logo } from "logo.svg";',
+    svgInfernoComponentNamedImport: {
+      code: 'import { InfernoComponent as logo } from "logo.svg";',
       output:
-        'import { ReactComponent as logo } from "@svgr/webpack?-svgo!logo.svg";',
+        'import { InfernoComponent as logo } from "@svgr/webpack?-svgo!logo.svg";',
     },
     svgMultipleImport: {
       code:
-        'import logo, { logoUrl , ReactComponent as Logo } from "logo.svg";',
+        'import logo, { logoUrl , InfernoComponent as Logo } from "logo.svg";',
       output:
         'import logo from "logo.svg";\n' +
         'import { logoUrl } from "logo.svg";\n' +
-        'import { ReactComponent as Logo } from "@svgr/webpack?-svgo!logo.svg";',
+        'import { InfernoComponent as Logo } from "@svgr/webpack?-svgo!logo.svg";',
     },
     defaultExport: {
       code: 'export default logo;',
@@ -78,20 +78,20 @@ pluginTester.default({
       code: 'export * from "logo.svg";',
       output: 'export * from "logo.svg";',
     },
-    svgReactComponentNamedExport: {
-      code: 'export { ReactComponent as Logo } from "logo.svg";',
+    svgInfernoComponentNamedExport: {
+      code: 'export { InfernoComponent as Logo } from "logo.svg";',
       output:
-        'export { ReactComponent as Logo } from "@svgr/webpack?-svgo!logo.svg";',
+        'export { InfernoComponent as Logo } from "@svgr/webpack?-svgo!logo.svg";',
     },
-    svgReactComponentExport: {
-      code: 'export { ReactComponent } from "logo.svg";',
-      output: 'export { ReactComponent } from "@svgr/webpack?-svgo!logo.svg";',
+    svgInfernoComponentExport: {
+      code: 'export { InfernoComponent } from "logo.svg";',
+      output: 'export { InfernoComponent } from "@svgr/webpack?-svgo!logo.svg";',
     },
     svgMultipleExport: {
-      code: 'export { logoUrl , ReactComponent as Logo } from "logo.svg";',
+      code: 'export { logoUrl , InfernoComponent as Logo } from "logo.svg";',
       output:
         'export { logoUrl } from "logo.svg";\n' +
-        'export { ReactComponent as Logo } from "@svgr/webpack?-svgo!logo.svg";',
+        'export { InfernoComponent as Logo } from "@svgr/webpack?-svgo!logo.svg";',
     },
   },
 });

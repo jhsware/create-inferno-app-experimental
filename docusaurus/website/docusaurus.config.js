@@ -6,11 +6,11 @@
  */
 
 const siteConfig = {
-  title: 'Create React App',
+  title: 'Create Inferno App',
   tagline: 'Set up a modern web app by running one command.',
-  url: 'https://create-react-app.dev',
+  url: 'https://create-inferno-app.dev',
   baseUrl: '/',
-  projectName: 'create-react-app',
+  projectName: 'create-inferno-app',
   organizationName: 'facebook',
   favicon: 'img/favicon/favicon.ico',
   presets: [
@@ -21,7 +21,7 @@ const siteConfig = {
           path: '../docs',
           sidebarPath: require.resolve('./sidebars.json'),
           editUrl:
-            'https://github.com/facebook/create-react-app/edit/main/docusaurus/website',
+            'https://github.com/facebook/create-inferno-app/edit/main/docusaurus/website',
           showLastUpdateAuthor: true,
           showLastUpdateTime: true,
         },
@@ -35,23 +35,23 @@ const siteConfig = {
     image: 'img/logo-og.png',
     algolia: {
       apiKey: '3be60f4f8ffc24c75da84857d6323791',
-      indexName: 'create-react-app',
+      indexName: 'create-inferno-app',
     },
     navbar: {
-      title: 'Create React App',
+      title: 'Create Inferno App',
       logo: {
-        alt: 'Create React App Logo',
+        alt: 'Create Inferno App Logo',
         src: 'img/logo.svg',
       },
       items: [
         { to: 'docs/getting-started', label: 'Docs', position: 'right' },
         {
-          href: 'https://reactjs.org/community/support.html',
+          href: 'https://infernojs.org/community/support.html',
           label: 'Help',
           position: 'right',
         },
         {
-          href: 'https://www.github.com/facebook/create-react-app',
+          href: 'https://www.github.com/facebook/create-inferno-app',
           label: 'GitHub',
           position: 'right',
         },
@@ -68,8 +68,8 @@ const siteConfig = {
               to: 'docs/getting-started',
             },
             {
-              label: 'Learn React',
-              href: 'https://reactjs.org/',
+              label: 'Learn Inferno',
+              href: 'https://infernojs.org/',
             },
           ],
         },
@@ -79,15 +79,15 @@ const siteConfig = {
             {
               label: 'Stack Overflow',
               href:
-                'https://stackoverflow.com/questions/tagged/create-react-app',
+                'https://stackoverflow.com/questions/tagged/create-inferno-app',
             },
             {
               label: 'GitHub Discussions',
-              href: 'https://github.com/facebook/create-react-app/discussions',
+              href: 'https://github.com/facebook/create-inferno-app/discussions',
             },
             {
               label: 'Twitter',
-              href: 'https://twitter.com/reactjs',
+              href: 'https://twitter.com/infernojs',
             },
             {
               label: 'Contributor Covenant',
@@ -101,7 +101,7 @@ const siteConfig = {
           items: [
             {
               label: 'GitHub',
-              href: 'https://www.github.com/facebook/create-react-app',
+              href: 'https://www.github.com/facebook/create-inferno-app',
             },
           ],
         },

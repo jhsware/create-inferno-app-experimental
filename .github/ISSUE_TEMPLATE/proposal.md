@@ -1,6 +1,6 @@
 ---
 name: Proposal
-about: Suggest an idea for improving Create React App
+about: Suggest an idea for improving Create Inferno App
 labels: 'issue: proposal, needs triage'
 ---
 

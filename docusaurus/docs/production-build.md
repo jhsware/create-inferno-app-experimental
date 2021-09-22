@@ -5,7 +5,7 @@ title: Creating a Production Build
 
 `npm run build` creates a `build` directory with a production build of your app. Inside the `build/static` directory will be your JavaScript and CSS files. Each filename inside of `build/static` will contain a unique hash of the file contents. This hash in the file name enables [long term caching techniques](#static-file-caching).
 
-When running a production build of freshly created Create React App application, there are a number of `.js` files (called _chunks_) that are generated and placed in the `build/static/js` directory:
+When running a production build of freshly created Create Inferno App application, there are a number of `.js` files (called _chunks_) that are generated and placed in the `build/static/js` directory:
 
 `main.[hash].chunk.js`
 
@@ -31,6 +31,6 @@ Using `Cache-Control: max-age=31536000` for your `build/static` assets, and `Cac
 
 ## Profiling
 
-ReactDOM automatically supports profiling in development mode for v16.5+, but since profiling adds some small
-additional overhead it is opt-in for production mode. You can opt-in by using the `--profile` flag. Use `npm run build -- --profile` or `yarn build --profile` to enable profiling in the production build. See the [React docs](https://reactjs.org/docs/optimizing-performance.html#profiling-components-with-the-devtools-profiler) for details about profiling
-using the React DevTools.
+InfernoDOM automatically supports profiling in development mode for v16.5+, but since profiling adds some small
+additional overhead it is opt-in for production mode. You can opt-in by using the `--profile` flag. Use `npm run build -- --profile` or `yarn build --profile` to enable profiling in the production build. See the [Inferno docs](https://infernojs.org/docs/optimizing-performance.html#profiling-components-with-the-devtools-profiler) for details about profiling
+using the Inferno DevTools.

@@ -1,5 +1,5 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
+import Inferno from 'inferno';
+import InfernoDOM from 'inferno-dom';
 import './index.sass';
 
-ReactDOM.render(<div />, document.getElementById('root'));
+InfernoDOM.render(<div />, document.getElementById('root'));

@@ -1,0 +1,6 @@
+{
+  "extends": ["inferno-app", "inferno-app/jest"],
+  "rules": {
+    "curly": "warn"
+  }
+}

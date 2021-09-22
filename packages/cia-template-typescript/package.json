@@ -1,0 +1,27 @@
+{
+  "name": "cia-template-typescript",
+  "version": "1.1.2",
+  "keywords": [
+    "react",
+    "create-inferno-app",
+    "template",
+    "typescript"
+  ],
+  "description": "The base TypeScript template for Create React App.",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/facebook/create-inferno-app.git",
+    "directory": "packages/cia-template-typescript"
+  },
+  "license": "MIT",
+  "engines": {
+    "node": ">=14"
+  },
+  "bugs": {
+    "url": "https://github.com/facebook/create-inferno-app/issues"
+  },
+  "files": [
+    "template",
+    "template.json"
+  ]
+}

@@ -4,9 +4,9 @@ title: Adding a Sass Stylesheet
 sidebar_label: Adding Sass Stylesheets
 ---
 
-> Note: this feature is available with `react-scripts@2.0.0` and higher.
+> Note: this feature is available with `inferno-scripts@2.0.0` and higher.
 
-Generally, we recommend that you don’t reuse the same CSS classes across different components. For example, instead of using a `.Button` CSS class in `<AcceptButton>` and `<RejectButton>` components, we recommend creating a `<Button>` component with its own `.Button` styles, that both `<AcceptButton>` and `<RejectButton>` can render (but [not inherit](https://facebook.github.io/react/docs/composition-vs-inheritance.html)).
+Generally, we recommend that you don’t reuse the same CSS classes across different components. For example, instead of using a `.Button` CSS class in `<AcceptButton>` and `<RejectButton>` components, we recommend creating a `<Button>` component with its own `.Button` styles, that both `<AcceptButton>` and `<RejectButton>` can render (but [not inherit](https://facebook.github.io/inferno/docs/composition-vs-inheritance.html)).
 
 Following this rule often makes CSS preprocessors less useful, as features like mixins and nesting are replaced by component composition. You can, however, integrate a CSS preprocessor if you find it valuable.
 
@@ -34,7 +34,7 @@ This will allow you to do imports like
 
 `sass` also supports the `SASS_PATH` variable.
 
-To use imports relative to a path you specify, you can add a [`.env` file](https://github.com/facebook/create-react-app/blob/main/docusaurus/docs/adding-custom-environment-variables.md#adding-development-environment-variables-in-env) at the project root with the path specified in the `SASS_PATH` environment variable. To specify more directories you can add them to `SASS_PATH` separated by a `:` like `path1:path2:path3`.
+To use imports relative to a path you specify, you can add a [`.env` file](https://github.com/facebook/create-inferno-app/blob/main/docusaurus/docs/adding-custom-environment-variables.md#adding-development-environment-variables-in-env) at the project root with the path specified in the `SASS_PATH` environment variable. To specify more directories you can add them to `SASS_PATH` separated by a `:` like `path1:path2:path3`.
 
 > **Note:** For the Windows operating system, separate your paths by semicolons.
 >

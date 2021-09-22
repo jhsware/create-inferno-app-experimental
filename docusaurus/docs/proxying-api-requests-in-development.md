@@ -4,14 +4,14 @@ title: Proxying API Requests in Development
 sidebar_label: Proxying in Development
 ---
 
-> Note: this feature is available with `react-scripts@0.2.3` and higher.
+> Note: this feature is available with `inferno-scripts@0.2.3` and higher.
 
-People often serve the front-end React app from the same host and port as their backend implementation.
+People often serve the front-end Inferno app from the same host and port as their backend implementation.
 
 For example, a production setup might look like this after the app is deployed:
 
-    /             - static server returns index.html with React app
-    /todos        - static server returns index.html with React app
+    /             - static server returns index.html with Inferno app
+    /todos        - static server returns index.html with Inferno app
     /api/todos    - server handles any /api/* requests using the backend implementation
 
 Such setup is **not** required. However, if you **do** have a setup like this, it is convenient to write requests like `fetch('/api/todos')` without worrying about redirecting them to another host or port during development.
@@ -44,7 +44,7 @@ If the `proxy` option is **not** flexible enough for you, alternatively you can:
 
 When you enable the `proxy` option, you opt into a more strict set of host checks. This is necessary because leaving the backend open to remote hosts makes your computer vulnerable to DNS rebinding attacks. The issue is explained in [this article](https://medium.com/webpack/webpack-dev-server-middleware-security-issues-1489d950874a) and [this issue](https://github.com/webpack/webpack-dev-server/issues/887).
 
-This shouldn’t affect you when developing on `localhost`, but if you develop remotely like [described here](https://github.com/facebook/create-react-app/issues/2271), you will see this error in the browser after enabling the `proxy` option:
+This shouldn’t affect you when developing on `localhost`, but if you develop remotely like [described here](https://github.com/facebook/create-inferno-app/issues/2271), you will see this error in the browser after enabling the `proxy` option:
 
 > Invalid Host header
 
@@ -68,7 +68,7 @@ We don’t recommend this approach.
 
 ## Configuring the Proxy Manually
 
-> Note: this feature is available with `react-scripts@2.0.0` and higher.
+> Note: this feature is available with `inferno-scripts@2.0.0` and higher.
 
 If the `proxy` option is **not** flexible enough for you, you can get direct access to the Express app instance and hook up your own proxy middleware.
 

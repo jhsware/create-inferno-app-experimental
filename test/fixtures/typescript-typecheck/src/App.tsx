@@ -1,6 +1,6 @@
-import * as React from 'react';
+import * as Inferno from 'inferno';
 
-class App extends React.Component {
+class App extends Inferno.Component {
   render() {
     return <div>{format(123)}</div>;
   }

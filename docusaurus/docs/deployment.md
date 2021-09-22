@@ -29,7 +29,7 @@ serve -h
 
 ## Other Solutions
 
-You don’t necessarily need a static server in order to run a Create React App project in production. It also works well when integrated into an existing server side app.
+You don’t necessarily need a static server in order to run a Create Inferno App project in production. It also works well when integrated into an existing server side app.
 
 Here’s a programmatic example using [Node](https://nodejs.org/) and [Express](https://expressjs.com/):
 
@@ -47,15 +47,15 @@ app.get('/', function (req, res) {
 app.listen(9000);
 ```
 
-The choice of your server software isn’t important either. Since Create React App is completely platform-agnostic, there’s no need to explicitly use Node.
+The choice of your server software isn’t important either. Since Create Inferno App is completely platform-agnostic, there’s no need to explicitly use Node.
 
-The `build` folder with static assets is the only output produced by Create React App.
+The `build` folder with static assets is the only output produced by Create Inferno App.
 
 However this is not quite enough if you use client-side routing. Read the next section if you want to support URLs like `/todos/42` in your single-page app.
 
 ## Serving Apps with Client-Side Routing
 
-If you use routers that use the HTML5 [`pushState` history API](https://developer.mozilla.org/en-US/docs/Web/API/History_API#Adding_and_modifying_history_entries) under the hood (for example, [React Router](https://github.com/ReactTraining/react-router) with `browserHistory`), many static file servers will fail. For example, if you used React Router with a route for `/todos/42`, the development server will respond to `localhost:3000/todos/42` properly, but an Express serving a production build as above will not.
+If you use routers that use the HTML5 [`pushState` history API](https://developer.mozilla.org/en-US/docs/Web/API/History_API#Adding_and_modifying_history_entries) under the hood (for example, [Inferno Router](https://github.com/InfernoTraining/inferno-router) with `browserHistory`), many static file servers will fail. For example, if you used Inferno Router with a route for `/todos/42`, the development server will respond to `localhost:3000/todos/42` properly, but an Express serving a production build as above will not.
 
 This is because when there is a fresh page load for a `/todos/42`, the server looks for the file `build/todos/42` and does not find it. The server needs to be configured to respond to a request to `/todos/42` by serving `index.html`. For example, we can amend our Express example above to serve `index.html` for any unknown paths:
 
@@ -100,7 +100,7 @@ When users install your app to the homescreen of their device the default config
 
 ## Building for Relative Paths
 
-By default, Create React App produces a build assuming your app is hosted at the server root.
+By default, Create Inferno App produces a build assuming your app is hosted at the server root.
 
 To override this, specify the `homepage` in your `package.json`, for example:
 
@@ -108,11 +108,11 @@ To override this, specify the `homepage` in your `package.json`, for example:
   "homepage": "http://mywebsite.com/relativepath",
 ```
 
-This will let Create React App correctly infer the root path to use in the generated HTML file.
+This will let Create Inferno App correctly infer the root path to use in the generated HTML file.
 
-**Note**: If you are using `react-router@^4`, you can root `<Link>`s using the `basename` prop on any `<Router>`.
+**Note**: If you are using `inferno-router@^4`, you can root `<Link>`s using the `basename` prop on any `<Router>`.
 
-More information [here](https://reacttraining.com/react-router/web/api/BrowserRouter/basename-string).
+More information [here](https://infernotraining.com/inferno-router/web/api/BrowserRouter/basename-string).
 
 For example:
 
@@ -123,7 +123,7 @@ For example:
 
 ### Serving the Same Build from Different Paths
 
-> Note: this feature is available with `react-scripts@0.9.0` and higher.
+> Note: this feature is available with `inferno-scripts@0.9.0` and higher.
 
 If you are not using the HTML5 `pushState` history API or not using client-side routing at all, it is unnecessary to specify the URL from which your app will be served. Instead, you can put this in your `package.json`:
 
@@ -166,7 +166,7 @@ Variables in `.env.production` will be used as fallback because `NODE_ENV` will 
 The AWS Amplify Console provides continuous deployment and hosting for modern web apps (single page apps and static site generators) with serverless backends. The Amplify Console offers globally available CDNs, custom domain setup, feature branch deployments, and password protection.
 
 1. Login to the Amplify Console [here](https://console.aws.amazon.com/amplify/home).
-1. Connect your Create React App repo and pick a branch. If you're looking for a Create React App+Amplify starter, try the [create-react-app-auth-amplify starter](https://github.com/swaminator/create-react-app-auth-amplify) that demonstrates setting up auth in 10 minutes with Create React App.
+1. Connect your Create Inferno App repo and pick a branch. If you're looking for a Create Inferno App+Amplify starter, try the [create-inferno-app-auth-amplify starter](https://github.com/swaminator/create-inferno-app-auth-amplify) that demonstrates setting up auth in 10 minutes with Create Inferno App.
 1. The Amplify Console automatically detects the build settings. Choose Next.
 1. Choose _Save and deploy_.
 
@@ -174,7 +174,7 @@ If the build succeeds, the app is deployed and hosted on a global CDN with an am
 
 ## [Azure](https://azure.microsoft.com/)
 
-Azure Static Web Apps creates an automated build and deploy pipeline for your React app powered by GitHub Actions. Applications are geo-distributed by default with multiple points of presence. PR's are built automatically for staging environment previews.
+Azure Static Web Apps creates an automated build and deploy pipeline for your Inferno app powered by GitHub Actions. Applications are geo-distributed by default with multiple points of presence. PR's are built automatically for staging environment previews.
 
 1. Create a new Static Web App [here](https://ms.portal.azure.com/#create/Microsoft.StaticApp).
 1. Add in the details and connect to your GitHub repo.
@@ -225,7 +225,7 @@ Then run the `firebase init` command from your project’s root. You need to cho
     ✔  Firebase initialization complete!
 ```
 
-IMPORTANT: you need to set proper HTTP caching headers for `service-worker.js` file in `firebase.json` file or you will not be able to see changes after first deployment ([issue #2440](https://github.com/facebook/create-react-app/issues/2440)). It should be added inside `"hosting"` key like next:
+IMPORTANT: you need to set proper HTTP caching headers for `service-worker.js` file in `firebase.json` file or you will not be able to see changes after first deployment ([issue #2440](https://github.com/facebook/create-inferno-app/issues/2440)). It should be added inside `"hosting"` key like next:
 
 ```json
 {
@@ -259,7 +259,7 @@ For more information see [Firebase Hosting](https://firebase.google.com/docs/hos
 
 ## [GitHub Pages](https://pages.github.com/)
 
-> Note: this feature is available with `react-scripts@0.2.0` and higher.
+> Note: this feature is available with `inferno-scripts@0.2.0` and higher.
 
 ### Step 1: Add `homepage` to `package.json`
 
@@ -285,7 +285,7 @@ or for a custom domain page:
   "homepage": "https://mywebsite.com",
 ```
 
-Create React App uses the `homepage` field to determine the root URL in the built HTML file.
+Create Inferno App uses the `homepage` field to determine the root URL in the built HTML file.
 
 ### Step 2: Install `gh-pages` and add `deploy` to `scripts` in `package.json`
 
@@ -309,8 +309,8 @@ Add the following scripts in your `package.json`:
   "scripts": {
 +   "predeploy": "npm run build",
 +   "deploy": "gh-pages -d build",
-    "start": "react-scripts start",
-    "build": "react-scripts build",
+    "start": "inferno-scripts start",
+    "build": "inferno-scripts build",
 ```
 
 The `predeploy` script will run automatically before `deploy` is run.
@@ -353,9 +353,9 @@ mywebsite.com
 
 ### Notes on client-side routing
 
-GitHub Pages doesn’t support routers that use the HTML5 `pushState` history API under the hood (for example, React Router using `browserHistory`). This is because when there is a fresh page load for a url like `http://user.github.io/todomvc/todos/42`, where `/todos/42` is a frontend route, the GitHub Pages server returns 404 because it knows nothing of `/todos/42`. If you want to add a router to a project hosted on GitHub Pages, here are a couple of solutions:
+GitHub Pages doesn’t support routers that use the HTML5 `pushState` history API under the hood (for example, Inferno Router using `browserHistory`). This is because when there is a fresh page load for a url like `http://user.github.io/todomvc/todos/42`, where `/todos/42` is a frontend route, the GitHub Pages server returns 404 because it knows nothing of `/todos/42`. If you want to add a router to a project hosted on GitHub Pages, here are a couple of solutions:
 
-- You could switch from using HTML5 history API to routing with hashes. If you use React Router, you can switch to `hashHistory` for this effect, but the URL will be longer and more verbose (for example, `http://user.github.io/todomvc/#/todos/42?_k=yknaj`). [Read more](https://reacttraining.com/react-router/web/api/Router) about different history implementations in React Router.
+- You could switch from using HTML5 history API to routing with hashes. If you use Inferno Router, you can switch to `hashHistory` for this effect, but the URL will be longer and more verbose (for example, `http://user.github.io/todomvc/#/todos/42?_k=yknaj`). [Read more](https://infernotraining.com/inferno-router/web/api/Router) about different history implementations in Inferno Router.
 - Alternatively, you can use a trick to teach GitHub Pages to handle 404s by redirecting to your `index.html` page with a custom redirect parameter. You would need to add a `404.html` file with the redirection code to the `build` folder before deploying your project, and you’ll need to add code handling the redirect parameter to `index.html`. You can find a detailed explanation of this technique [in this guide](https://github.com/rafrex/spa-github-pages).
 
 ### Troubleshooting
@@ -378,9 +378,9 @@ If, when deploying, you get `Cannot read property 'email' of null`, try the foll
 
 ## [Heroku](https://www.heroku.com/)
 
-Use the [Heroku Buildpack for Create React App](https://github.com/mars/create-react-app-buildpack).
+Use the [Heroku Buildpack for Create Inferno App](https://github.com/mars/create-inferno-app-buildpack).
 
-You can find instructions in [Deploying React with Zero Configuration](https://blog.heroku.com/deploying-react-with-zero-configuration).
+You can find instructions in [Deploying Inferno with Zero Configuration](https://blog.heroku.com/deploying-inferno-with-zero-configuration).
 
 ### Resolving Heroku Deployment Errors
 
@@ -442,21 +442,21 @@ To support `pushState`, make sure to create a `public/_redirects` file with the 
 /*  /index.html  200
 ```
 
-When you build the project, Create React App will place the `public` folder contents into the build output.
+When you build the project, Create Inferno App will place the `public` folder contents into the build output.
 
 ## [Vercel](https://vercel.com)
 
 [Vercel](https://vercel.com/home) is a cloud platform that enables developers to host Jamstack websites and web services that deploy instantly, scale automatically, and requires no supervision, all with zero configuration. They provide a global edge network, SSL encryption, asset compression, cache invalidation, and more.
 
-### Step 1: Deploying your React project to Vercel
+### Step 1: Deploying your Inferno project to Vercel
 
-To deploy your React project with a [Vercel for Git Integration](https://vercel.com/docs/git-integrations), make sure it has been pushed to a Git repository.
+To deploy your Inferno project with a [Vercel for Git Integration](https://vercel.com/docs/git-integrations), make sure it has been pushed to a Git repository.
 
 Import the project into Vercel using the [Import Flow](https://vercel.com/import/git). During the import, you will find all relevant [options](https://vercel.com/docs/build-step#build-&-development-settings) preconfigured for you with the ability to change as needed.
 
 After your project has been imported, all subsequent pushes to branches will generate [Preview Deployments](https://vercel.com/docs/platform/deployments#preview), and all changes made to the [Production Branch](https://vercel.com/docs/git-integrations#production-branch) (commonly "master" or "main") will result in a [Production Deployment](https://vercel.com/docs/platform/deployments#production).
 
-Once deployed, you will get a URL to see your app live, such as the following: https://create-react-app-example.vercel.app/.
+Once deployed, you will get a URL to see your app live, such as the following: https://create-inferno-app-example.vercel.app/.
 
 ### Step 2 (optional): Using a Custom Domain
 
@@ -466,16 +466,16 @@ To add your domain to your project, navigate to your [Project](https://vercel.co
 
 Once the domain as been added, you will be presented with different methods for configuring it.
 
-### Deploying a fresh React project
+### Deploying a fresh Inferno project
 
-You can deploy a fresh React project, with a Git repository set up for you, with the following Deploy Button:
+You can deploy a fresh Inferno project, with a Git repository set up for you, with the following Deploy Button:
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/import/git?s=https%3A%2F%2Fgithub.com%2Fvercel%2Fvercel%2Ftree%2Fmaster%2Fexamples%2Fcreate-react-app)
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/import/git?s=https%3A%2F%2Fgithub.com%2Fvercel%2Fvercel%2Ftree%2Fmaster%2Fexamples%2Fcreate-inferno-app)
 
 ### Vercel References:
 
-- [Example Source](https://github.com/vercel/vercel/tree/master/examples/create-react-app)
-- [Official Vercel Guide](https://vercel.com/guides/deploying-react-with-vercel-cra)
+- [Example Source](https://github.com/vercel/vercel/tree/master/examples/create-inferno-app)
+- [Official Vercel Guide](https://vercel.com/guides/deploying-inferno-with-vercel-cra)
 - [Vercel Deployment Docs](https://vercel.com/docs)
 - [Vercel Custom Domain Docs](https://vercel.com/docs/custom-domains)
 
@@ -483,13 +483,13 @@ You can deploy a fresh React project, with a Git repository set up for you, with
 
 Render offers free [static site](https://render.com/docs/static-sites) hosting with fully managed SSL, a global CDN and continuous auto deploys from GitHub.
 
-Deploy your app in only a few minutes by following the [Create React App deployment guide](https://render.com/docs/deploy-create-react-app).
+Deploy your app in only a few minutes by following the [Create Inferno App deployment guide](https://render.com/docs/deploy-create-inferno-app).
 
 Use invite code `cra` to sign up or use [this link](https://render.com/i/cra).
 
 ## [S3](https://aws.amazon.com/s3) and [CloudFront](https://aws.amazon.com/cloudfront/)
 
-See this [blog post](https://medium.com/@omgwtfmarc/deploying-create-react-app-to-s3-or-cloudfront-48dae4ce0af) on how to deploy your React app to Amazon Web Services S3 and CloudFront. If you are looking to add a custom domain, HTTPS and continuous deployment see this [blog post](https://medium.com/dailyjs/a-guide-to-deploying-your-react-app-with-aws-s3-including-https-a-custom-domain-a-cdn-and-58245251f081).
+See this [blog post](https://medium.com/@omgwtfmarc/deploying-create-inferno-app-to-s3-or-cloudfront-48dae4ce0af) on how to deploy your Inferno app to Amazon Web Services S3 and CloudFront. If you are looking to add a custom domain, HTTPS and continuous deployment see this [blog post](https://medium.com/dailyjs/a-guide-to-deploying-your-inferno-app-with-aws-s3-including-https-a-custom-domain-a-cdn-and-58245251f081).
 
 ## [Surge](https://surge.sh/)
 
@@ -505,4 +505,4 @@ Note that in order to support routers that use HTML5 `pushState` API, you may wa
 
 ## Publishing Components To npm
 
-Create React App doesn't provide any built-in functionality to publish a component to npm. If you're ready to extract a component from your project so other people can use it, we recommend moving it to a separate directory outside of your project and then using a tool like [nwb](https://github.com/insin/nwb#react-components-and-libraries) to prepare it for publishing.
+Create Inferno App doesn't provide any built-in functionality to publish a component to npm. If you're ready to extract a component from your project so other people can use it, we recommend moving it to a separate directory outside of your project and then using a tool like [nwb](https://github.com/insin/nwb#inferno-components-and-libraries) to prepare it for publishing.

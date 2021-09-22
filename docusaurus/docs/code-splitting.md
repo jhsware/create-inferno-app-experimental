@@ -20,7 +20,7 @@ export { moduleA };
 ## `App.js`
 
 ```js
-import React, { Component } from 'react';
+import Inferno, { Component } from 'inferno';
 
 class App extends Component {
   handleClick = () => {
@@ -49,8 +49,8 @@ This will make `moduleA.js` and all its unique dependencies as a separate chunk 
 
 You can also use it with `async` / `await` syntax if you prefer it.
 
-## With React Router
+## With Inferno Router
 
-If you are using React Router check out [this tutorial](https://reactjs.org/docs/code-splitting.html#route-based-code-splitting)
+If you are using Inferno Router check out [this tutorial](https://infernojs.org/docs/code-splitting.html#route-based-code-splitting)
 
-Also check out the [Code Splitting](https://reactjs.org/docs/code-splitting.html) section in React documentation.
+Also check out the [Code Splitting](https://infernojs.org/docs/code-splitting.html) section in Inferno documentation.

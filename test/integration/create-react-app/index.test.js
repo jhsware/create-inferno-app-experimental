@@ -4,7 +4,7 @@ const execa = require('execa');
 const { mkdirp, remove, writeFileSync, existsSync } = require('fs-extra');
 const { join } = require('path');
 
-const cli = require.resolve('create-react-app/index.js');
+const cli = require.resolve('create-inferno-app/index.js');
 
 jest.setTimeout(1000 * 60 * 5);
 
@@ -25,7 +25,7 @@ const run = (args, options) => execa('node', [cli].concat(args), options);
 
 const genFileExists = f => existsSync(join(genPath, f));
 
-describe('create-react-app', () => {
+describe('create-inferno-app', () => {
   it('asks to supply an argument if none supplied', async () => {
     const { stderr } = await run([], { reject: false });
     expect(stderr).toContain('Please specify the project directory');

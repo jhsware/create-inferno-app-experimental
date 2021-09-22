@@ -4,22 +4,22 @@ title: About the Documentation
 sidebar_label: About Docs
 ---
 
-Welcome to the Create React App documentation!
+Welcome to the Create Inferno App documentation!
 
 ## Navigation
 
 You can find different topics in the table of contents. On desktop, you should see it in the left sidebar. On mobile, you should see it after pressing an icon with arrows in the top left corner.
 
-## Looking for React Docs?
+## Looking for Inferno Docs?
 
-The documentation for React itself is located on a separate website: **[reactjs.org](https://reactjs.org/)**.
+The documentation for Inferno itself is located on a separate website: **[infernojs.org](https://infernojs.org/)**.
 
-This website is only about Create React App.
+This website is only about Create Inferno App.
 
 ## Something Missing?
 
-If you have ideas for more “How To” recipes that should be on this page, [let us know](https://github.com/facebook/create-react-app/issues) or [contribute some!](https://github.com/facebook/create-react-app/tree/main/docusaurus/docs)
+If you have ideas for more “How To” recipes that should be on this page, [let us know](https://github.com/facebook/create-inferno-app/issues) or [contribute some!](https://github.com/facebook/create-inferno-app/tree/main/docusaurus/docs)
 
 ## Feedback
 
-We are always open to [your feedback](https://github.com/facebook/create-react-app/issues).
+We are always open to [your feedback](https://github.com/facebook/create-inferno-app/issues).
