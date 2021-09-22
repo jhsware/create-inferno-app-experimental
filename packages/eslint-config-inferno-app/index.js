@@ -233,7 +233,6 @@ module.exports = {
     'import/no-webpack-loader-syntax': 'error',
 
     // https://github.com/yannickcr/eslint-plugin-inferno/tree/master/docs/rules
-    'inferno/forbid-foreign-prop-types': ['warn', { allowInPropTypes: true }],
     'inferno/jsx-no-comment-textnodes': 'warn',
     'inferno/jsx-no-duplicate-props': 'warn',
     'inferno/jsx-no-target-blank': 'warn',

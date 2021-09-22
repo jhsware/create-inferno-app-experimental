@@ -195,8 +195,6 @@ module.exports = function (api, opts, env) {
         },
       ],
       isEnvProduction && [
-        // Remove PropTypes from production build
-        require('babel-plugin-transform-inferno-remove-prop-types').default,
         {
           removeImport: true,
         },
