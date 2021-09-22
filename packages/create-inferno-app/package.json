@@ -2,7 +2,7 @@
   "name": "create-inferno-app",
   "version": "4.0.3",
   "keywords": [
-    "react"
+    "inferno"
   ],
   "description": "Create React apps with no build configuration.",
   "repository": {

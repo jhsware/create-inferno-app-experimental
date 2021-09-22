@@ -2,7 +2,7 @@
   "dependencies": {
     "@types/react": "*",
     "@types/jest": "*",
-    "react": "*",
+    "inferno": "*",
     "typescript": "^3.9.5"
   }
 }

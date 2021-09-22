@@ -2,7 +2,7 @@
   "name": "cia-template",
   "version": "1.1.2",
   "keywords": [
-    "react",
+    "inferno",
     "create-inferno-app",
     "template"
   ],
