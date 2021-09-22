@@ -6,7 +6,7 @@
     "create-inferno-app",
     "template"
   ],
-  "description": "The base template for Create React App.",
+  "description": "The base template for Create Inferno App.",
   "repository": {
     "type": "git",
     "url": "https://github.com/facebook/create-inferno-app.git",

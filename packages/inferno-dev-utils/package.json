@@ -1,7 +1,7 @@
 {
   "name": "inferno-dev-utils",
   "version": "11.0.4",
-  "description": "webpack utilities used by Create React App",
+  "description": "webpack utilities used by Create Inferno App",
   "repository": {
     "type": "git",
     "url": "https://github.com/facebook/create-inferno-app.git",

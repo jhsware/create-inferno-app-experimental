@@ -4,7 +4,7 @@
   "keywords": [
     "inferno"
   ],
-  "description": "Create React apps with no build configuration.",
+  "description": "Create Inferno apps with no build configuration.",
   "repository": {
     "type": "git",
     "url": "https://github.com/facebook/create-inferno-app.git",
@@ -19,7 +19,7 @@
   },
   "files": [
     "index.js",
-    "createReactApp.js",
+    "createInfernoApp.js",
     "yarn.lock.cached"
   ],
   "bin": {
