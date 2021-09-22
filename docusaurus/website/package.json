@@ -9,7 +9,7 @@
     "@docusaurus/core": "^2.0.0-alpha.64",
     "@docusaurus/preset-classic": "^2.0.0-alpha.64",
     "clsx": "^1.1.1",
-    "inferno": "^8.0.0"
+    "inferno": "^8.0.0-alpha.0"
   },
   "browserslist": {
     "production": [

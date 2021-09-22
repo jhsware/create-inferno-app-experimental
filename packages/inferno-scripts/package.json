@@ -76,7 +76,7 @@
     "workbox-webpack-plugin": "6.2.4"
   },
   "devDependencies": {
-    "inferno": "^8.0.0"
+    "inferno": "^8.0.0-alpha.0"
   },
   "optionalDependencies": {
     "fsevents": "^2.1.3"
