@@ -140,7 +140,7 @@ You can create an arbitrary build environment by creating a custom `.env` file a
 For example, to create a build environment for a staging environment:
 
 1. Create a file called `.env.staging`
-1. Set environment variables as you would any other `.env` file (e.g. `REACT_APP_API_URL=http://api-staging.example.com`)
+1. Set environment variables as you would any other `.env` file (e.g. `INFERNO_APP_API_URL=http://api-staging.example.com`)
 1. Install [env-cmd](https://www.npmjs.com/package/env-cmd)
    ```sh
    $ npm install env-cmd --save

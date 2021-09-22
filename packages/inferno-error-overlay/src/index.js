@@ -177,9 +177,9 @@ function updateIframeContent() {
   }
 }
 
-window.__REACT_ERROR_OVERLAY_GLOBAL_HOOK__ =
-  window.__REACT_ERROR_OVERLAY_GLOBAL_HOOK__ || {};
-window.__REACT_ERROR_OVERLAY_GLOBAL_HOOK__.iframeReady = function iframeReady() {
+window.__INFERNO_ERROR_OVERLAY_GLOBAL_HOOK__ =
+  window.__INFERNO_ERROR_OVERLAY_GLOBAL_HOOK__ || {};
+window.__INFERNO_ERROR_OVERLAY_GLOBAL_HOOK__.iframeReady = function iframeReady() {
   isIframeReady = true;
   isLoadingIframe = false;
   updateIframeContent();

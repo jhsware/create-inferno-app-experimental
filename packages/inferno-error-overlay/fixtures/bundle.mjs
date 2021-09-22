@@ -4216,7 +4216,7 @@ var warning = __webpack_require__(/*! fbjs/lib/warning */ 1);
 var canDefineProperty = __webpack_require__(/*! ./canDefineProperty */ 72);
 var hasOwnProperty = Object.prototype.hasOwnProperty;
 
-var REACT_ELEMENT_TYPE = __webpack_require__(/*! ./InfernoElementSymbol */ 122);
+var INFERNO_ELEMENT_TYPE = __webpack_require__(/*! ./InfernoElementSymbol */ 122);
 
 var RESERVED_PROPS = {
   key: true,
@@ -4302,7 +4302,7 @@ function defineRefPropWarningGetter(props, displayName) {
 var InfernoElement = function (type, key, ref, self, source, owner, props) {
   var element = {
     // This tag allow us to uniquely identify this as a Inferno Element
-    $$typeof: REACT_ELEMENT_TYPE,
+    $$typeof: INFERNO_ELEMENT_TYPE,
 
     // Built-in properties that belong on the element
     type: type,
@@ -4423,7 +4423,7 @@ InfernoElement.createElement = function (type, config, children) {
   }
   if (true) {
     if (key || ref) {
-      if (typeof props.$$typeof === 'undefined' || props.$$typeof !== REACT_ELEMENT_TYPE) {
+      if (typeof props.$$typeof === 'undefined' || props.$$typeof !== INFERNO_ELEMENT_TYPE) {
         var displayName = typeof type === 'function' ? type.displayName || type.name || 'Unknown' : type;
         if (key) {
           defineKeyPropWarningGetter(props, displayName);
@@ -4532,7 +4532,7 @@ InfernoElement.cloneElement = function (element, config, children) {
  * @final
  */
 InfernoElement.isValidElement = function (object) {
-  return typeof object === 'object' && object !== null && object.$$typeof === REACT_ELEMENT_TYPE;
+  return typeof object === 'object' && object !== null && object.$$typeof === INFERNO_ELEMENT_TYPE;
 };
 
 module.exports = InfernoElement;
@@ -15206,7 +15206,7 @@ module.exports = setTextContent;
 var _prodInvariant = __webpack_require__(/*! ./infernoProdInvariant */ 3);
 
 var InfernoCurrentOwner = __webpack_require__(/*! inferno/lib/InfernoCurrentOwner */ 15);
-var REACT_ELEMENT_TYPE = __webpack_require__(/*! ./InfernoElementSymbol */ 245);
+var INFERNO_ELEMENT_TYPE = __webpack_require__(/*! ./InfernoElementSymbol */ 245);
 
 var getIteratorFn = __webpack_require__(/*! ./getIteratorFn */ 279);
 var invariant = __webpack_require__(/*! fbjs/lib/invariant */ 0);
@@ -15266,7 +15266,7 @@ function traverseAllChildrenImpl(children, nameSoFar, callback, traverseContext)
   if (children === null || type === 'string' || type === 'number' ||
   // The following is inlined from InfernoElement. This means we can optimize
   // some checks. Inferno Fiber also inlines this logic for similar purposes.
-  type === 'object' && children.$$typeof === REACT_ELEMENT_TYPE) {
+  type === 'object' && children.$$typeof === INFERNO_ELEMENT_TYPE) {
     callback(traverseContext, children,
     // If it's the only child, treat the name as if it was wrapped in an array
     // so that it's consistent if the number of children grows.
@@ -15393,9 +15393,9 @@ module.exports = traverseAllChildren;
 // The Symbol used to tag the InfernoElement type. If there is no native Symbol
 // nor polyfill, then a plain number is used for performance.
 
-var REACT_ELEMENT_TYPE = typeof Symbol === 'function' && Symbol['for'] && Symbol['for']('inferno.element') || 0xeac7;
+var INFERNO_ELEMENT_TYPE = typeof Symbol === 'function' && Symbol['for'] && Symbol['for']('inferno.element') || 0xeac7;
 
-module.exports = REACT_ELEMENT_TYPE;
+module.exports = INFERNO_ELEMENT_TYPE;
 
 /***/ }),
 /* 123 */
@@ -30746,7 +30746,7 @@ module.exports = InfernoCompositeComponent;
  *
  */
 
-/* globals __REACT_DEVTOOLS_GLOBAL_HOOK__*/
+/* globals __INFERNO_DEVTOOLS_GLOBAL_HOOK__*/
 
 
 
@@ -30777,8 +30777,8 @@ var InfernoDOM = {
 
 // Inject the runtime into a devtools global hook regardless of browser.
 // Allows for debugging when the hook is injected on the page.
-if (typeof __REACT_DEVTOOLS_GLOBAL_HOOK__ !== 'undefined' && typeof __REACT_DEVTOOLS_GLOBAL_HOOK__.inject === 'function') {
-  __REACT_DEVTOOLS_GLOBAL_HOOK__.inject({
+if (typeof __INFERNO_DEVTOOLS_GLOBAL_HOOK__ !== 'undefined' && typeof __INFERNO_DEVTOOLS_GLOBAL_HOOK__.inject === 'function') {
+  __INFERNO_DEVTOOLS_GLOBAL_HOOK__.inject({
     ComponentTree: {
       getClosestInstanceFromNode: InfernoDOMComponentTree.getClosestInstanceFromNode,
       getNodeFromInstance: function (inst) {
@@ -30803,7 +30803,7 @@ if (true) {
   if (ExecutionEnvironment.canUseDOM && window.top === window.self) {
 
     // First check if devtools is not installed
-    if (typeof __REACT_DEVTOOLS_GLOBAL_HOOK__ === 'undefined') {
+    if (typeof __INFERNO_DEVTOOLS_GLOBAL_HOOK__ === 'undefined') {
       // If we're in Chrome or Firefox, provide a download link if not installed.
       if (navigator.userAgent.indexOf('Chrome') > -1 && navigator.userAgent.indexOf('Edge') === -1 || navigator.userAgent.indexOf('Firefox') > -1) {
         // Firefox does not have the issue with devtools loaded over file://
@@ -34026,9 +34026,9 @@ module.exports = {
 // The Symbol used to tag the InfernoElement type. If there is no native Symbol
 // nor polyfill, then a plain number is used for performance.
 
-var REACT_ELEMENT_TYPE = typeof Symbol === 'function' && Symbol['for'] && Symbol['for']('inferno.element') || 0xeac7;
+var INFERNO_ELEMENT_TYPE = typeof Symbol === 'function' && Symbol['for'] && Symbol['for']('inferno.element') || 0xeac7;
 
-module.exports = REACT_ELEMENT_TYPE;
+module.exports = INFERNO_ELEMENT_TYPE;
 
 /***/ }),
 /* 246 */
@@ -39726,7 +39726,7 @@ module.exports = onlyChild;
 var _prodInvariant = __webpack_require__(/*! ./infernoProdInvariant */ 23);
 
 var InfernoCurrentOwner = __webpack_require__(/*! ./InfernoCurrentOwner */ 15);
-var REACT_ELEMENT_TYPE = __webpack_require__(/*! ./InfernoElementSymbol */ 122);
+var INFERNO_ELEMENT_TYPE = __webpack_require__(/*! ./InfernoElementSymbol */ 122);
 
 var getIteratorFn = __webpack_require__(/*! ./getIteratorFn */ 73);
 var invariant = __webpack_require__(/*! fbjs/lib/invariant */ 0);
@@ -39786,7 +39786,7 @@ function traverseAllChildrenImpl(children, nameSoFar, callback, traverseContext)
   if (children === null || type === 'string' || type === 'number' ||
   // The following is inlined from InfernoElement. This means we can optimize
   // some checks. Inferno Fiber also inlines this logic for similar purposes.
-  type === 'object' && children.$$typeof === REACT_ELEMENT_TYPE) {
+  type === 'object' && children.$$typeof === INFERNO_ELEMENT_TYPE) {
     callback(traverseContext, children,
     // If it's the only child, treat the name as if it was wrapped in an array
     // so that it's consistent if the number of children grows.

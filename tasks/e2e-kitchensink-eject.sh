@@ -118,7 +118,7 @@ export BROWSERSLIST='ie 9'
 echo yes | npm run eject
 
 # Test the build
-REACT_APP_SHELL_ENV_MESSAGE=fromtheshell \
+INFERNO_APP_SHELL_ENV_MESSAGE=fromtheshell \
   NODE_PATH=src \
   PUBLIC_URL=http://www.example.org/spa/ \
   npm run build
@@ -128,7 +128,7 @@ exists build/*.html
 exists build/static/js/main.*.js
 
 # Unit tests
-REACT_APP_SHELL_ENV_MESSAGE=fromtheshell \
+INFERNO_APP_SHELL_ENV_MESSAGE=fromtheshell \
   CI=true \
   NODE_PATH=src \
   NODE_ENV=test \
@@ -137,12 +137,12 @@ REACT_APP_SHELL_ENV_MESSAGE=fromtheshell \
 # Test "development" environment
 tmp_server_log=`mktemp`
 PORT=3002 \
-  REACT_APP_SHELL_ENV_MESSAGE=fromtheshell \
+  INFERNO_APP_SHELL_ENV_MESSAGE=fromtheshell \
   NODE_PATH=src \
   nohup npm start &>$tmp_server_log &
 grep -q 'You can now view' <(tail -f $tmp_server_log)
 E2E_URL="http://localhost:3002" \
-  REACT_APP_SHELL_ENV_MESSAGE=fromtheshell \
+  INFERNO_APP_SHELL_ENV_MESSAGE=fromtheshell \
   CI=true NODE_PATH=src \
   NODE_ENV=development \
   BABEL_ENV=test \

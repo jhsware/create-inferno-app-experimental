@@ -260,7 +260,7 @@ getProcessForPort(3000);
 
 #### `launchEditor(fileName: string, lineNumber: number): void`
 
-On macOS, tries to find a known running editor process and opens the file in it. It can also be explicitly configured by `REACT_EDITOR`, `VISUAL`, or `EDITOR` environment variables. For example, you can put `REACT_EDITOR=atom` in your `.env.local` file, and Create Inferno App will respect that.
+On macOS, tries to find a known running editor process and opens the file in it. It can also be explicitly configured by `INFERNO_EDITOR`, `VISUAL`, or `EDITOR` environment variables. For example, you can put `INFERNO_EDITOR=atom` in your `.env.local` file, and Create Inferno App will respect that.
 
 #### `noopServiceWorkerMiddleware(servedPath: string): ExpressMiddleware`
 
