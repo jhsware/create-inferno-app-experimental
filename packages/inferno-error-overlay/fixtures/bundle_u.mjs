@@ -30872,7 +30872,7 @@ module.exports = InfernoCompositeComponent;
  *
  */
 
-/* globals __INFERNO_DEVTOOLS_GLOBAL_HOOK__*/
+/* globals __REACT_DEVTOOLS_GLOBAL_HOOK__*/
 
 
 
@@ -30903,8 +30903,8 @@ var InfernoDOM = {
 
 // Inject the runtime into a devtools global hook regardless of browser.
 // Allows for debugging when the hook is injected on the page.
-if (typeof __INFERNO_DEVTOOLS_GLOBAL_HOOK__ !== 'undefined' && typeof __INFERNO_DEVTOOLS_GLOBAL_HOOK__.inject === 'function') {
-  __INFERNO_DEVTOOLS_GLOBAL_HOOK__.inject({
+if (typeof __REACT_DEVTOOLS_GLOBAL_HOOK__ !== 'undefined' && typeof __REACT_DEVTOOLS_GLOBAL_HOOK__.inject === 'function') {
+  __REACT_DEVTOOLS_GLOBAL_HOOK__.inject({
     ComponentTree: {
       getClosestInstanceFromNode: InfernoDOMComponentTree.getClosestInstanceFromNode,
       getNodeFromInstance: function (inst) {
@@ -30929,7 +30929,7 @@ if (true) {
   if (ExecutionEnvironment.canUseDOM && window.top === window.self) {
 
     // First check if devtools is not installed
-    if (typeof __INFERNO_DEVTOOLS_GLOBAL_HOOK__ === 'undefined') {
+    if (typeof __REACT_DEVTOOLS_GLOBAL_HOOK__ === 'undefined') {
       // If we're in Chrome or Firefox, provide a download link if not installed.
       if (navigator.userAgent.indexOf('Chrome') > -1 && navigator.userAgent.indexOf('Edge') === -1 || navigator.userAgent.indexOf('Firefox') > -1) {
         // Firefox does not have the issue with devtools loaded over file://

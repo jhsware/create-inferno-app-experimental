@@ -11,14 +11,10 @@
     "build:prod": "cross-env NODE_ENV=production node build.js",
     "flow": "flow"
   },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/facebook/create-inferno-app.git",
-    "directory": "packages/inferno-error-overlay"
-  },
+  "repository": "infernojs/create-inferno-app",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/facebook/create-inferno-app/issues"
+    "url": "https://github.com/infernojs/create-inferno-app/issues"
   },
   "keywords": [
     "overlay",
@@ -40,7 +36,7 @@
     "anser": "1.4.10",
     "babel-jest": "^26.6.0",
     "babel-loader": "8.2.2",
-    "babel-preset-inferno-app": "^10.0.0",
+    "babel-preset-inferno-app": "^8.0.3",
     "chalk": "2.4.2",
     "chokidar": "^3.5.1",
     "cross-env": "7.0.3",
@@ -54,7 +50,7 @@
     "promise": "8.1.0",
     "raw-loader": "^4.0.2",
     "inferno": "^8.0.0-alpha.0",
-    "inferno-app-polyfill": "^2.0.0",
+    "react-app-polyfill": "^2.0.0",
     "rimraf": "^3.0.2",
     "settle-promise": "1.0.0",
     "source-map": "0.5.7",

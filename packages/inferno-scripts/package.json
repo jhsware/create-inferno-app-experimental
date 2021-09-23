@@ -61,7 +61,7 @@
     "postcss-normalize": "10.0.0",
     "postcss-preset-env": "6.7.0",
     "prompts": "2.4.1",
-    "inferno-app-polyfill": "^2.0.0",
+    "react-app-polyfill": "^2.0.0",
     "inferno-dev-utils": "^11.0.4",
     "react-refresh": "^0.10.0",
     "resolve": "1.20.0",

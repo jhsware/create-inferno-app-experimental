@@ -73,7 +73,7 @@ module.exports = {
       // in production mode.
       'process.env': { NODE_ENV: '"production"' },
       // This prevents our bundled Inferno from accidentally hijacking devtools.
-      __INFERNO_DEVTOOLS_GLOBAL_HOOK__: '({})',
+      __REACT_DEVTOOLS_GLOBAL_HOOK__: '({})',
     }),
   ],
   performance: false,
