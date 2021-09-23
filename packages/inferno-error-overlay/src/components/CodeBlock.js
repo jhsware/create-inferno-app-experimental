@@ -6,8 +6,6 @@
  */
 
 /* @flow */
-import Inferno, { useContext } from 'inferno';
-import { ThemeContext } from '../iframeScript';
 
 const _preStyle = {
   position: 'relative',
@@ -29,8 +27,7 @@ type CodeBlockPropsType = {|
   codeHTML: string,
 |};
 
-function CodeBlock({ main, codeHTML }: CodeBlockPropsType) {
-  const theme = useContext(ThemeContext);
+function CodeBlock({ main, codeHTML }: CodeBlockPropsType, { theme }) {
   const primaryPreStyle = {
     ..._preStyle,
     backgroundColor: theme.primaryPreBackground,

@@ -6,8 +6,6 @@
  */
 
 /* @flow */
-import Inferno, { useContext } from 'inferno';
-import { ThemeContext } from '../iframeScript';
 import type { Theme } from '../styles';
 
 const closeButtonStyle = (theme: Theme) => ({
@@ -25,8 +23,7 @@ type CloseButtonPropsType = {|
   close: () => void,
 |};
 
-function CloseButton({ close }: CloseButtonPropsType) {
-  const theme = useContext(ThemeContext);
+function CloseButton({ close }: CloseButtonPropsType, { theme }) {
   return (
     <span
       title="Click or press Escape to dismiss."

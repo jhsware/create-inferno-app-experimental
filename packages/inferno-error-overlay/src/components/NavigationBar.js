@@ -6,8 +6,6 @@
  */
 
 /* @flow */
-import Inferno, { useContext } from 'inferno';
-import { ThemeContext } from '../iframeScript';
 import type { Theme } from '../styles';
 
 const navigationBarStyle = {
@@ -51,8 +49,7 @@ type NavigationBarPropsType = {|
   next: Callback,
 |};
 
-function NavigationBar(props: NavigationBarPropsType) {
-  const theme = useContext(ThemeContext);
+function NavigationBar(props: NavigationBarPropsType, { theme }) {
   const { currentError, totalErrors, previous, next } = props;
   return (
     <div style={navigationBarStyle}>

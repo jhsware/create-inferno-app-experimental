@@ -6,8 +6,7 @@
  */
 
 /* @flow */
-import Inferno, { useState, useContext } from 'inferno';
-import { ThemeContext } from '../iframeScript';
+import { useState } from 'inferno';
 import CodeBlock from './StackFrameCodeBlock';
 import { getPrettyURL } from '../utils/getPrettyURL';
 
@@ -53,8 +52,7 @@ type StackFramePropsType = {|
   editorHandler: (errorLoc: ErrorLocation) => void,
 |};
 
-function StackFrame(props: StackFramePropsType) {
-  const theme = useContext(ThemeContext);
+function StackFrame(props: StackFramePropsType, { theme }) {
   const [compiled, setCompiled] = useState(false);
 
   const toggleCompiled = () => {

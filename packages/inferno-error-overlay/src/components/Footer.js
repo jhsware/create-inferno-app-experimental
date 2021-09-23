@@ -6,8 +6,6 @@
  */
 
 /* @flow */
-import Inferno, { useContext } from 'inferno';
-import { ThemeContext } from '../iframeScript';
 import type { Theme } from '../styles';
 
 const footerStyle = (theme: Theme) => ({
@@ -22,8 +20,7 @@ type FooterPropsType = {|
   line2?: string,
 |};
 
-function Footer(props: FooterPropsType) {
-  const theme = useContext(ThemeContext);
+function Footer(props: FooterPropsType, { theme }) {
   return (
     <div style={footerStyle(theme)}>
       {props.line1}

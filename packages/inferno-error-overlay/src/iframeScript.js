@@ -6,7 +6,7 @@
  */
 
 import 'inferno-app-polyfill/ie9';
-import Inferno, { createContext } from 'inferno';
+import { Component } from 'inferno';
 import InfernoDOM from 'inferno-dom';
 import CompileErrorContainer from './containers/CompileErrorContainer';
 import RuntimeErrorContainer from './containers/RuntimeErrorContainer';
@@ -15,7 +15,12 @@ import { applyStyles, getTheme } from './utils/dom/css';
 
 let iframeRoot = null;
 const theme = getTheme();
-export const ThemeContext = createContext();
+
+class ThemeContext extends Component {
+  getChildContext() {
+    return theme;
+  }
+}
 
 function render({
   currentBuildError,
@@ -25,23 +30,23 @@ function render({
 }) {
   if (currentBuildError) {
     return (
-      <ThemeContext.Provider value={theme}>
+      <ThemeContext>
         <CompileErrorContainer
           error={currentBuildError}
           editorHandler={editorHandler}
         />
-      </ThemeContext.Provider>
+      </ThemeContext>
     );
   }
   if (currentRuntimeErrorRecords.length > 0) {
     return (
-      <ThemeContext.Provider value={theme}>
+      <ThemeContext>
         <RuntimeErrorContainer
           errorRecords={currentRuntimeErrorRecords}
           close={dismissRuntimeErrors}
           editorHandler={editorHandler}
         />
-      </ThemeContext.Provider>
+      </ThemeContext>
     );
   }
   return null;

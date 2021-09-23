@@ -6,8 +6,7 @@
  */
 
 /* @flow */
-import Inferno, { useContext, useEffect } from 'inferno';
-import { ThemeContext } from '../iframeScript';
+import { useEffect } from 'inferno';
 
 import type { Node as InfernoNode } from 'inferno';
 import type { Theme } from '../styles';
@@ -39,8 +38,7 @@ type ErrorOverlayPropsType = {|
 
 let iframeWindow: window = null;
 
-function ErrorOverlay(props: ErrorOverlayPropsType) {
-  const theme = useContext(ThemeContext);
+function ErrorOverlay(props: ErrorOverlayPropsType, { theme }) {
 
   const getIframeWindow = (element: ?HTMLDivElement) => {
     if (element) {

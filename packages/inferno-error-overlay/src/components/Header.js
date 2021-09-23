@@ -6,8 +6,6 @@
  */
 
 /* @flow */
-import Inferno, { useContext } from 'inferno';
-import { ThemeContext } from '../iframeScript';
 import type { Theme } from '../styles';
 
 const headerStyle = (theme: Theme) => ({
@@ -27,8 +25,7 @@ type HeaderPropType = {|
   headerText: string,
 |};
 
-function Header(props: HeaderPropType) {
-  const theme = useContext(ThemeContext);
+function Header(props: HeaderPropType, { theme }) {
   return <div style={headerStyle(theme)}>{props.headerText}</div>;
 }
 

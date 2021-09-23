@@ -6,8 +6,7 @@
  */
 
 /* @flow */
-import Inferno, { useState, useContext } from 'inferno';
-import { ThemeContext } from '../iframeScript';
+import { useState } from 'inferno';
 
 import type { Element as InfernoElement } from 'inferno';
 import type { Theme } from '../styles';
@@ -42,8 +41,7 @@ type CollapsiblePropsType = {|
   children: InfernoElement<any>[],
 |};
 
-function Collapsible(props: CollapsiblePropsType) {
-  const theme = useContext(ThemeContext);
+function Collapsible(props: CollapsiblePropsType, { theme }) {
   const [collapsed, setCollapsed] = useState(true);
 
   const toggleCollapsed = () => {

@@ -6,8 +6,6 @@
  */
 
 /* @flow */
-import Inferno, { useContext } from 'inferno';
-import { ThemeContext } from '../iframeScript';
 import CodeBlock from '../components/CodeBlock';
 import { absolutifyCaret } from '../utils/dom/absolutifyCaret';
 import type { ScriptLine } from '../utils/stack-frame';
@@ -27,8 +25,7 @@ type StackFrameCodeBlockPropsType = {|
 // See: https://github.com/facebook/flow/issues/2405
 type Exact<T> = $Shape<T>;
 
-function StackFrameCodeBlock(props: Exact<StackFrameCodeBlockPropsType>) {
-  const theme = useContext(ThemeContext);
+function StackFrameCodeBlock(props: Exact<StackFrameCodeBlockPropsType>, { theme }) {
   const { lines, lineNum, columnNum, contextSize, main } = props;
   const sourceCode = [];
   let whiteSpace = Infinity;
