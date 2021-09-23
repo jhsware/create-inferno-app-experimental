@@ -1,11 +1,11 @@
 {
-  "name": "eslint-config-react-app",
+  "name": "eslint-config-inferno-app",
   "version": "6.0.0",
   "description": "ESLint configuration used by Create Inferno App",
   "repository": {
     "type": "git",
     "url": "https://github.com/facebook/create-inferno-app.git",
-    "directory": "packages/eslint-config-react-app"
+    "directory": "packages/eslint-config-inferno-app"
   },
   "license": "MIT",
   "bugs": {
