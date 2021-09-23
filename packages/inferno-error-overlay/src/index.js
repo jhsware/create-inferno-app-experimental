@@ -17,41 +17,31 @@ import { applyStyles } from './utils/dom/css';
 // $FlowFixMe
 import iframeScript from 'iframeScript';
 
-import type { ErrorRecord } from './listenToRuntimeErrors';
-import type { ErrorLocation } from './utils/parseCompileError';
+let iframe = null;
+let isLoadingIframe = false;
+var isIframeReady = false;
 
-type RuntimeReportingOptions = {|
-  onError: () => void,
-  filename?: string,
-|};
+let editorHandler = null;
+let currentBuildError = null;
+let currentRuntimeErrorRecords = [];
+let currentRuntimeErrorOptions = null;
+let stopListeningToRuntimeErrors = null;
 
-type EditorHandler = (errorLoc: ErrorLocation) => void;
-
-let iframe: null | HTMLIFrameElement = null;
-let isLoadingIframe: boolean = false;
-var isIframeReady: boolean = false;
-
-let editorHandler: null | EditorHandler = null;
-let currentBuildError: null | string = null;
-let currentRuntimeErrorRecords: Array<ErrorRecord> = [];
-let currentRuntimeErrorOptions: null | RuntimeReportingOptions = null;
-let stopListeningToRuntimeErrors: null | (() => void) = null;
-
-export function setEditorHandler(handler: EditorHandler | null) {
+export function setEditorHandler(handler) {
   editorHandler = handler;
   if (iframe) {
     update();
   }
 }
 
-export function reportBuildError(error: string) {
+export function reportBuildError(error) {
   currentBuildError = error;
   update();
 }
 
 export function reportRuntimeError(
-  error: Error,
-  options: RuntimeReportingOptions = {}
+  error,
+  options = {}
 ) {
   currentRuntimeErrorOptions = options;
   crashWithFrames(handleRuntimeError(options))(error);
@@ -62,7 +52,7 @@ export function dismissBuildError() {
   update();
 }
 
-export function startReportingRuntimeErrors(options: RuntimeReportingOptions) {
+export function startReportingRuntimeErrors(options) {
   if (stopListeningToRuntimeErrors !== null) {
     throw new Error('Already listening');
   }
@@ -80,8 +70,8 @@ export function startReportingRuntimeErrors(options: RuntimeReportingOptions) {
   );
 }
 
-const handleRuntimeError = (options: RuntimeReportingOptions) => (
-  errorRecord: ErrorRecord
+const handleRuntimeError = (options) => (
+  errorRecord
 ) => {
   try {
     if (typeof options.onError === 'function') {
