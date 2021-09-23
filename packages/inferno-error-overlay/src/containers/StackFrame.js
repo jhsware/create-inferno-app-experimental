@@ -5,31 +5,31 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-/* @flow */
+/*       */
 import { useState } from 'inferno';
 import CodeBlock from './StackFrameCodeBlock';
 import { getPrettyURL } from '../utils/getPrettyURL';
 
-import type { StackFrame as StackFrameType } from '../utils/stack-frame';
-import type { ErrorLocation } from '../utils/parseCompileError';
-import type { Theme } from '../styles';
+                                                                         
+                                                                
+                                       
 
-const linkStyle = (theme: Theme) => ({
+const linkStyle = (theme       ) => ({
   fontSize: '0.9em',
   marginBottom: '0.9em',
 });
 
-const anchorStyle = (theme: Theme) => ({
+const anchorStyle = (theme       ) => ({
   textDecoration: 'none',
   color: theme.anchorColor,
   cursor: 'pointer',
 });
 
-const codeAnchorStyle = (theme: Theme) => ({
+const codeAnchorStyle = (theme       ) => ({
   cursor: 'pointer',
 });
 
-const toggleStyle = (theme: Theme) => ({
+const toggleStyle = (theme       ) => ({
   marginBottom: '1.5em',
   color: theme.toggleColor,
   cursor: 'pointer',
@@ -44,22 +44,22 @@ const toggleStyle = (theme: Theme) => ({
   lineHeight: '1.5',
 });
 
-type StackFramePropsType = {|
-  frame: StackFrameType,
-  contextSize: number,
-  critical: boolean,
-  showCode: boolean,
-  editorHandler: (errorLoc: ErrorLocation) => void,
-|};
+                             
+                        
+                      
+                    
+                    
+                                                   
+   
 
-function StackFrame(props: StackFramePropsType, { theme }) {
+function StackFrame(props                     , { theme }) {
   const [compiled, setCompiled] = useState(false);
 
   const toggleCompiled = () => {
     setCompiled(!compiled);
   };
 
-  const getErrorLocation = (): ErrorLocation | null => {
+  const getErrorLocation = ()                       => {
     const {
       _originalFileName: fileName,
       _originalLineNumber: lineNumber,
@@ -85,7 +85,7 @@ function StackFrame(props: StackFramePropsType, { theme }) {
     props.editorHandler(errorLoc);
   };
 
-  const onKeyDown = (e: SyntheticKeyboardEvent<any>) => {
+  const onKeyDown = (e                             ) => {
     if (e.key === 'Enter') {
       editorHandler();
     }

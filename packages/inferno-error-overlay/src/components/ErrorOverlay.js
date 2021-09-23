@@ -5,13 +5,13 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-/* @flow */
+/*       */
 import { useEffect } from 'inferno';
 
-import type { Node as InfernoNode } from 'inferno';
-import type { Theme } from '../styles';
+                                                   
+                                       
 
-const overlayStyle = (theme: Theme) => ({
+const overlayStyle = (theme       ) => ({
   position: 'relative',
   display: 'inline-flex',
   flexDirection: 'column',
@@ -31,16 +31,16 @@ const overlayStyle = (theme: Theme) => ({
   color: theme.color,
 });
 
-type ErrorOverlayPropsType = {|
-  children: InfernoNode,
-  shortcutHandler?: (eventKey: string) => void,
-|};
+                               
+                        
+                                               
+   
 
-let iframeWindow: window = null;
+let iframeWindow         = null;
 
-function ErrorOverlay(props: ErrorOverlayPropsType, { theme }) {
+function ErrorOverlay(props                       , { theme }) {
 
-  const getIframeWindow = (element: ?HTMLDivElement) => {
+  const getIframeWindow = (element                 ) => {
     if (element) {
       const document = element.ownerDocument;
       iframeWindow = document.defaultView;
@@ -49,7 +49,7 @@ function ErrorOverlay(props: ErrorOverlayPropsType, { theme }) {
   const { shortcutHandler } = props;
 
   useEffect(() => {
-    const onKeyDown = (e: KeyboardEvent) => {
+    const onKeyDown = (e               ) => {
       if (shortcutHandler) {
         shortcutHandler(e.key);
       }

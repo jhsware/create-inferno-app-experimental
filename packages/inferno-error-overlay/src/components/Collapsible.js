@@ -5,11 +5,11 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-/* @flow */
+/*       */
 import { useState } from 'inferno';
 
-import type { Element as InfernoElement } from 'inferno';
-import type { Theme } from '../styles';
+                                                         
+                                       
 
 const _collapsibleStyle = {
   cursor: 'pointer',
@@ -23,25 +23,25 @@ const _collapsibleStyle = {
   lineHeight: '1.5',
 };
 
-const collapsibleCollapsedStyle = (theme: Theme) => ({
+const collapsibleCollapsedStyle = (theme       ) => ({
   ..._collapsibleStyle,
   color: theme.color,
   background: theme.background,
   marginBottom: '1.5em',
 });
 
-const collapsibleExpandedStyle = (theme: Theme) => ({
+const collapsibleExpandedStyle = (theme       ) => ({
   ..._collapsibleStyle,
   color: theme.color,
   background: theme.background,
   marginBottom: '0.6em',
 });
 
-type CollapsiblePropsType = {|
-  children: InfernoElement<any>[],
-|};
+                              
+                                  
+   
 
-function Collapsible(props: CollapsiblePropsType, { theme }) {
+function Collapsible(props                      , { theme }) {
   const [collapsed, setCollapsed] = useState(true);
 
   const toggleCollapsed = () => {

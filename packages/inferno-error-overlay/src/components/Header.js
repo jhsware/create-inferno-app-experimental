@@ -5,10 +5,10 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-/* @flow */
-import type { Theme } from '../styles';
+/*       */
+                                       
 
-const headerStyle = (theme: Theme) => ({
+const headerStyle = (theme       ) => ({
   fontSize: '2em',
   fontFamily: 'sans-serif',
   color: theme.headerColor,
@@ -21,11 +21,11 @@ const headerStyle = (theme: Theme) => ({
   overflow: 'auto',
 });
 
-type HeaderPropType = {|
-  headerText: string,
-|};
+                        
+                     
+   
 
-function Header(props: HeaderPropType, { theme }) {
+function Header(props                , { theme }) {
   return <div style={headerStyle(theme)}>{props.headerText}</div>;
 }
 

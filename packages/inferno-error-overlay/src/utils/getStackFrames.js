@@ -5,17 +5,17 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-/* @flow */
-import type { StackFrame } from './stack-frame';
+/*       */
+                                                
 import { parse } from './parser';
 import { map } from './mapper';
 import { unmap } from './unmapper';
 
 function getStackFrames(
-  error: Error,
-  unhandledRejection: boolean = false,
-  contextSize: number = 3
-): Promise<StackFrame[] | null> {
+  error       ,
+  unhandledRejection          = false,
+  contextSize         = 3
+)                               {
   const parsedFrames = parse(error);
   let enhancedFramesPromise;
   // $FlowFixMe

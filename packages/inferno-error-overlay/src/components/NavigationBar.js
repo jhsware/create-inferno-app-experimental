@@ -5,8 +5,8 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-/* @flow */
-import type { Theme } from '../styles';
+/*       */
+                                       
 
 const navigationBarStyle = {
   marginBottom: '0.5rem',
@@ -23,7 +23,7 @@ const _navButtonStyle = {
   cursor: 'pointer',
 };
 
-const leftButtonStyle = (theme: Theme) => ({
+const leftButtonStyle = (theme       ) => ({
   ..._navButtonStyle,
   backgroundColor: theme.navBackground,
   color: theme.navArrow,
@@ -32,7 +32,7 @@ const leftButtonStyle = (theme: Theme) => ({
   marginRight: '1px',
 });
 
-const rightButtonStyle = (theme: Theme) => ({
+const rightButtonStyle = (theme       ) => ({
   ..._navButtonStyle,
   backgroundColor: theme.navBackground,
   color: theme.navArrow,
@@ -40,16 +40,16 @@ const rightButtonStyle = (theme: Theme) => ({
   borderBottomLeftRadius: '0px',
 });
 
-type Callback = () => void;
+                           
 
-type NavigationBarPropsType = {|
-  currentError: number,
-  totalErrors: number,
-  previous: Callback,
-  next: Callback,
-|};
+                                
+                       
+                      
+                     
+                 
+   
 
-function NavigationBar(props: NavigationBarPropsType, { theme }) {
+function NavigationBar(props                        , { theme }) {
   const { currentError, totalErrors, previous, next } = props;
   return (
     <div style={navigationBarStyle}>

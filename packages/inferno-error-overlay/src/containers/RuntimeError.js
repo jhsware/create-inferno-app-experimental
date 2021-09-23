@@ -5,32 +5,32 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-/* @flow */
+/*       */
 import Inferno from 'inferno';
 import Header from '../components/Header';
 import StackTrace from './StackTrace';
 
-import type { StackFrame } from '../utils/stack-frame';
-import type { ErrorLocation } from '../utils/parseCompileError';
+                                                       
+                                                                
 
 const wrapperStyle = {
   display: 'flex',
   flexDirection: 'column',
 };
 
-export type ErrorRecord = {|
-  error: Error,
-  unhandledRejection: boolean,
-  contextSize: number,
-  stackFrames: StackFrame[],
-|};
+                            
+               
+                              
+                      
+                            
+   
 
-type Props = {|
-  errorRecord: ErrorRecord,
-  editorHandler: (errorLoc: ErrorLocation) => void,
-|};
+               
+                           
+                                                   
+   
 
-function RuntimeError({ errorRecord, editorHandler }: Props) {
+function RuntimeError({ errorRecord, editorHandler }       ) {
   const { error, unhandledRejection, contextSize, stackFrames } = errorRecord;
   const errorName = unhandledRejection
     ? 'Unhandled Rejection (' + error.name + ')'

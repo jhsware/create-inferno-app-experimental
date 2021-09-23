@@ -5,7 +5,7 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-/* @flow */
+/*       */
 import Inferno, { PureComponent } from 'inferno';
 import ErrorOverlay from '../components/ErrorOverlay';
 import CloseButton from '../components/CloseButton';
@@ -13,20 +13,20 @@ import NavigationBar from '../components/NavigationBar';
 import RuntimeError from './RuntimeError';
 import Footer from '../components/Footer';
 
-import type { ErrorRecord } from './RuntimeError';
-import type { ErrorLocation } from '../utils/parseCompileError';
+                                                  
+                                                                
 
-type Props = {|
-  errorRecords: ErrorRecord[],
-  close: () => void,
-  editorHandler: (errorLoc: ErrorLocation) => void,
-|};
+               
+                              
+                    
+                                                   
+   
 
-type State = {|
-  currentIndex: number,
-|};
+               
+                       
+   
 
-class RuntimeErrorContainer extends PureComponent<Props, State> {
+class RuntimeErrorContainer extends PureComponent               {
   state = {
     currentIndex: 0,
   };
@@ -49,7 +49,7 @@ class RuntimeErrorContainer extends PureComponent<Props, State> {
     }));
   };
 
-  shortcutHandler = (key: string) => {
+  shortcutHandler = (key        ) => {
     if (key === 'Escape') {
       this.props.close();
     } else if (key === 'ArrowLeft') {

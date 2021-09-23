@@ -5,27 +5,27 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-/* @flow */
+/*       */
 import CodeBlock from '../components/CodeBlock';
 import { absolutifyCaret } from '../utils/dom/absolutifyCaret';
-import type { ScriptLine } from '../utils/stack-frame';
+                                                       
 import generateAnsiHTML from '../utils/generateAnsiHTML';
 
 import { codeFrameColumns } from '@babel/code-frame';
 
-type StackFrameCodeBlockPropsType = {|
-  lines: ScriptLine[],
-  lineNum: number,
-  columnNum: ?number,
-  contextSize: number,
-  main: boolean,
-|};
+                                      
+                      
+                  
+                     
+                      
+                
+   
 
 // Exact type workaround for spread operator.
 // See: https://github.com/facebook/flow/issues/2405
-type Exact<T> = $Shape<T>;
+                          
 
-function StackFrameCodeBlock(props: Exact<StackFrameCodeBlockPropsType>, { theme }) {
+function StackFrameCodeBlock(props                                     , { theme }) {
   const { lines, lineNum, columnNum, contextSize, main } = props;
   const sourceCode = [];
   let whiteSpace = Infinity;

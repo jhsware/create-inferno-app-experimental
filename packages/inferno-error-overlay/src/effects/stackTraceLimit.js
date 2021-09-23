@@ -5,14 +5,14 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-/* @flow */
-let stackTraceRegistered: boolean = false;
+/*       */
+let stackTraceRegistered          = false;
 // Default: https://docs.microsoft.com/en-us/scripting/javascript/reference/stacktracelimit-property-error-javascript
-let restoreStackTraceValue: number = 10;
+let restoreStackTraceValue         = 10;
 
-const MAX_STACK_LENGTH: number = 50;
+const MAX_STACK_LENGTH         = 50;
 
-function registerStackTraceLimit(limit: number = MAX_STACK_LENGTH) {
+function registerStackTraceLimit(limit         = MAX_STACK_LENGTH) {
   if (stackTraceRegistered) {
     return;
   }

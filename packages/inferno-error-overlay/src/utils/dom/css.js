@@ -5,17 +5,17 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-/* @flow */
+/*       */
 import { lightTheme, darkTheme } from '../../styles';
 
 let injectedCount = 0;
 const injectedCache = {};
 
-function getHead(document: Document) {
+function getHead(document          ) {
   return document.head || document.getElementsByTagName('head')[0];
 }
 
-function injectCss(document: Document, css: string): number {
+function injectCss(document          , css        )         {
   const head = getHead(document);
   const style = document.createElement('style');
   style.type = 'text/css';
@@ -26,7 +26,7 @@ function injectCss(document: Document, css: string): number {
   return injectedCount;
 }
 
-function removeCss(document: Document, ref: number) {
+function removeCss(document          , ref        ) {
   if (injectedCache[ref] == null) {
     return;
   }
@@ -35,7 +35,7 @@ function removeCss(document: Document, ref: number) {
   delete injectedCache[ref];
 }
 
-function applyStyles(element: HTMLElement, styles: Object) {
+function applyStyles(element             , styles        ) {
   element.setAttribute('style', '');
   for (const key in styles) {
     if (!styles.hasOwnProperty(key)) {
