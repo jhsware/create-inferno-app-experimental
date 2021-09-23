@@ -1,13 +1,10 @@
-import Inferno from 'inferno';
-import InfernoDOM from 'inferno-dom';
+import { render } from 'inferno';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
-InfernoDOM.render(
-  <Inferno.StrictMode>
-    <App />
-  </Inferno.StrictMode>,
+render(
+  <App />,
   document.getElementById('root')
 );
 

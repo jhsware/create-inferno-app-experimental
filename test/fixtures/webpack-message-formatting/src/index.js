@@ -1,5 +1,5 @@
 import Inferno from 'inferno';
-import InfernoDOM from 'inferno-dom';
+import { render } from 'inferno';
 import App from './App';
 
-InfernoDOM.render(<App />, document.getElementById('root'));
+render(<App />, document.getElementById('root'));

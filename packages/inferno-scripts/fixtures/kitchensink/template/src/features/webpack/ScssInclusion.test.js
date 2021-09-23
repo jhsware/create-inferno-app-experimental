@@ -6,12 +6,12 @@
  */
 
 import Inferno from 'inferno';
-import InfernoDOM from 'inferno-dom';
+import { render } from 'inferno';
 import ScssInclusion from './ScssInclusion';
 
 describe('scss inclusion', () => {
   it('renders without crashing', () => {
     const div = document.createElement('div');
-    InfernoDOM.render(<ScssInclusion />, div);
+    render(<ScssInclusion />, div);
   });
 });

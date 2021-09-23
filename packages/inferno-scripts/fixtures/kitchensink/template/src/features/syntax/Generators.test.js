@@ -6,14 +6,14 @@
  */
 
 import Inferno from 'inferno';
-import InfernoDOM from 'inferno-dom';
+import { render } from 'inferno';
 import Generators from './Generators';
 
 describe('generators', () => {
   it('renders without crashing', () => {
     const div = document.createElement('div');
     return new Promise(resolve => {
-      InfernoDOM.render(<Generators onReady={resolve} />, div);
+      render(<Generators onReady={resolve} />, div);
     });
   });
 });

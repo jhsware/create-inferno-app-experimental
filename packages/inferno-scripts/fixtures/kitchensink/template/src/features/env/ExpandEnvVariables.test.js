@@ -6,12 +6,12 @@
  */
 
 import Inferno from 'inferno';
-import InfernoDOM from 'inferno-dom';
+import { render } from 'inferno';
 import ExpandEnvVariables from './ExpandEnvVariables';
 
 describe('expand .env variables', () => {
   it('renders without crashing', () => {
     const div = document.createElement('div');
-    InfernoDOM.render(<ExpandEnvVariables />, div);
+    render(<ExpandEnvVariables />, div);
   });
 });

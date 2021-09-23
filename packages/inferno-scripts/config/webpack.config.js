@@ -300,7 +300,6 @@ module.exports = function (webpackEnv) {
         'inferno-native': 'inferno-native-web',
         // Allows for better profiling with InfernoDevTools
         ...(isEnvProductionProfile && {
-          'inferno-dom$': 'inferno-dom/profiling',
           'scheduler/tracing': 'scheduler/tracing-profiling',
         }),
         ...(modules.webpackAliases || {}),

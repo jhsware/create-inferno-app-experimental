@@ -6,14 +6,14 @@
  */
 
 import Inferno from 'inferno';
-import InfernoDOM from 'inferno-dom';
+import { render } from 'inferno';
 import NodePath from './BaseUrl';
 
 describe('BASE_URL', () => {
   it('renders without crashing', () => {
     const div = document.createElement('div');
     return new Promise(resolve => {
-      InfernoDOM.render(<NodePath onReady={resolve} />, div);
+      render(<NodePath onReady={resolve} />, div);
     });
   });
 });

@@ -6,12 +6,12 @@
  */
 
 import Inferno from 'inferno';
-import InfernoDOM from 'inferno-dom';
+import { render } from 'inferno';
 import JsonInclusion from './JsonInclusion';
 
 describe('JSON inclusion', () => {
   it('renders without crashing', () => {
     const div = document.createElement('div');
-    InfernoDOM.render(<JsonInclusion />, div);
+    render(<JsonInclusion />, div);
   });
 });

@@ -6,12 +6,12 @@
  */
 
 import Inferno from 'inferno';
-import InfernoDOM from 'inferno-dom';
+import { render } from 'inferno';
 import PublicUrl from './PublicUrl';
 
 describe('PUBLIC_URL', () => {
   it('renders without crashing', () => {
     const div = document.createElement('div');
-    InfernoDOM.render(<PublicUrl />, div);
+    render(<PublicUrl />, div);
   });
 });

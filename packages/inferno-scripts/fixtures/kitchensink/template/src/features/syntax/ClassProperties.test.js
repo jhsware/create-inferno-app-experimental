@@ -6,14 +6,14 @@
  */
 
 import Inferno from 'inferno';
-import InfernoDOM from 'inferno-dom';
+import { render } from 'inferno';
 import ClassProperties from './ClassProperties';
 
 describe('class properties', () => {
   it('renders without crashing', () => {
     const div = document.createElement('div');
     return new Promise(resolve => {
-      InfernoDOM.render(<ClassProperties onReady={resolve} />, div);
+      render(<ClassProperties onReady={resolve} />, div);
     });
   });
 });

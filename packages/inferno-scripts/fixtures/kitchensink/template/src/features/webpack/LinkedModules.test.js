@@ -6,7 +6,7 @@
  */
 
 import Inferno from 'inferno';
-import InfernoDOM from 'inferno-dom';
+import { render } from 'inferno';
 import { test, version } from 'test-integrity';
 import LinkedModules from './LinkedModules';
 
@@ -18,6 +18,6 @@ describe('linked modules', () => {
 
   it('renders without crashing', () => {
     const div = document.createElement('div');
-    InfernoDOM.render(<LinkedModules />, div);
+    render(<LinkedModules />, div);
   });
 });

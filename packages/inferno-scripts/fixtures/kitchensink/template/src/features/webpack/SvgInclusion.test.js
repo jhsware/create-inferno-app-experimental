@@ -6,12 +6,12 @@
  */
 
 import Inferno from 'inferno';
-import InfernoDOM from 'inferno-dom';
+import { render } from 'inferno';
 import SvgInclusion from './SvgInclusion';
 
 describe('svg inclusion', () => {
   it('renders without crashing', () => {
     const div = document.createElement('div');
-    InfernoDOM.render(<SvgInclusion />, div);
+    render(<SvgInclusion />, div);
   });
 });

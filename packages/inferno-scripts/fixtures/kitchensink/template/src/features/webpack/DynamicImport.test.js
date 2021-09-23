@@ -6,13 +6,13 @@
  */
 
 import Inferno from 'inferno';
-import InfernoDOM from 'inferno-dom';
+import { render } from 'inferno';
 
 describe('dynamic import', () => {
   it('renders without crashing', async () => {
     const DynamicImport = (await import('./DynamicImport')).default;
     const div = document.createElement('div');
-    InfernoDOM.render(<DynamicImport />, div);
+    render(<DynamicImport />, div);
     expect(div.textContent).toBe('Hello World!');
   });
 });

@@ -72,12 +72,11 @@ Different projects choose different testing tradeoffs based on how often compone
 
 ```js
 import Inferno from 'inferno';
-import InfernoDOM from 'inferno-dom';
 import App from './App';
 
 it('renders without crashing', () => {
   const div = document.createElement('div');
-  InfernoDOM.render(<App />, div);
+  render(<App />, div);
 });
 ```
 
@@ -321,7 +320,7 @@ If you know that none of your tests depend on [jsdom](https://github.com/tmpvar/
 To help you make up your mind, here is a list of APIs that **need jsdom**:
 
 - Any browser globals like `window` and `document`
-- [`InfernoDOM.render()`](https://facebook.github.io/inferno/docs/top-level-api.html#infernodom.render)
+- [`render()`](https://facebook.github.io/inferno/docs/top-level-api.html#infernodom.render)
 - [`TestUtils.renderIntoDocument()`](https://facebook.github.io/inferno/docs/test-utils.html#renderintodocument) ([a shortcut](https://github.com/facebook/inferno/blob/34761cf9a252964abfaab6faf74d473ad95d1f21/src/test/InfernoTestUtils.js#L83-L91) for the above)
 - [`mount()`](https://airbnb.io/enzyme/docs/api/mount.html) in [Enzyme](https://airbnb.io/enzyme/index.html)
 - [`render()`](https://testing-library.com/docs/inferno-testing-library/api/#render) in [Inferno Testing Library](https://testing-library.com/docs/inferno-testing-library/intro/)

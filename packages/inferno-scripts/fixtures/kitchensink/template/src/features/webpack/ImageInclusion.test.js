@@ -6,12 +6,12 @@
  */
 
 import Inferno from 'inferno';
-import InfernoDOM from 'inferno-dom';
+import { render } from 'inferno';
 import ImageInclusion from './ImageInclusion';
 
 describe('image inclusion', () => {
   it('renders without crashing', () => {
     const div = document.createElement('div');
-    InfernoDOM.render(<ImageInclusion />, div);
+    render(<ImageInclusion />, div);
   });
 });

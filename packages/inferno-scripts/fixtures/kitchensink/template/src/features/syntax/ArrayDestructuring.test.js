@@ -6,14 +6,14 @@
  */
 
 import Inferno from 'inferno';
-import InfernoDOM from 'inferno-dom';
+import { render } from 'inferno';
 import ArrayDestructuring from './ArrayDestructuring';
 
 describe('array destructuring', () => {
   it('renders without crashing', () => {
     const div = document.createElement('div');
     return new Promise(resolve => {
-      InfernoDOM.render(<ArrayDestructuring onReady={resolve} />, div);
+      render(<ArrayDestructuring onReady={resolve} />, div);
     });
   });
 });

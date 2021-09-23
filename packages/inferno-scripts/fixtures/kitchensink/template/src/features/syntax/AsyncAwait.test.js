@@ -6,14 +6,14 @@
  */
 
 import Inferno from 'inferno';
-import InfernoDOM from 'inferno-dom';
+import { render } from 'inferno';
 import AsyncAwait from './AsyncAwait';
 
 describe('async/await', () => {
   it('renders without crashing', () => {
     const div = document.createElement('div');
     return new Promise(resolve => {
-      InfernoDOM.render(<AsyncAwait onReady={resolve} />, div);
+      render(<AsyncAwait onReady={resolve} />, div);
     });
   });
 });

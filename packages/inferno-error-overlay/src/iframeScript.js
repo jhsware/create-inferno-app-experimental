@@ -7,7 +7,6 @@
 
 import 'inferno-app-polyfill/ie9';
 import { Component } from 'inferno';
-import InfernoDOM from 'inferno-dom';
 import CompileErrorContainer from './containers/CompileErrorContainer';
 import RuntimeErrorContainer from './containers/RuntimeErrorContainer';
 import { overlayStyle } from './styles';
@@ -60,7 +59,7 @@ window.updateContent = function updateContent(errorOverlayProps) {
     return false;
   }
   // Update the overlay
-  InfernoDOM.render(renderedElement, iframeRoot);
+  render(renderedElement, iframeRoot);
   return true;
 };
 

@@ -6,12 +6,12 @@
  */
 
 import Inferno from 'inferno';
-import InfernoDOM from 'inferno-dom';
+import { render } from 'inferno';
 import SassModulesInclusion from './SassModulesInclusion';
 
 describe('sass modules inclusion', () => {
   it('renders without crashing', () => {
     const div = document.createElement('div');
-    InfernoDOM.render(<SassModulesInclusion />, div);
+    render(<SassModulesInclusion />, div);
   });
 });

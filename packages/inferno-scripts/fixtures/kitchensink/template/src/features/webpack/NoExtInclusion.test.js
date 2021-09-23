@@ -6,12 +6,12 @@
  */
 
 import Inferno from 'inferno';
-import InfernoDOM from 'inferno-dom';
+import { render } from 'inferno';
 import NoExtInclusion from './NoExtInclusion';
 
 describe('no ext inclusion', () => {
   it('renders without crashing', () => {
     const div = document.createElement('div');
-    InfernoDOM.render(<NoExtInclusion />, div);
+    render(<NoExtInclusion />, div);
   });
 });

@@ -6,12 +6,12 @@
  */
 
 import Inferno from 'inferno';
-import InfernoDOM from 'inferno-dom';
+import { render } from 'inferno';
 import App from './App';
 
 test('loads modules absolutely with baseUrl', () => {
   const div = document.createElement('div');
   return new Promise(resolve => {
-    InfernoDOM.render(<App onReady={resolve} />, div);
+    render(<App onReady={resolve} />, div);
   });
 });

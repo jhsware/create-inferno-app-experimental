@@ -1,10 +1,10 @@
 import Inferno from 'inferno';
-import InfernoDOM from 'inferno-dom';
+import { render } from 'inferno';
 import SvgInCss from './SvgInCss';
 
 describe('svg in css', () => {
   it('renders without crashing', () => {
     const div = document.createElement('div');
-    InfernoDOM.render(<SvgInCss />, div);
+    render(<SvgInCss />, div);
   });
 });

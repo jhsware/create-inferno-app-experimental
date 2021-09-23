@@ -6,12 +6,12 @@
  */
 
 import Inferno from 'inferno';
-import InfernoDOM from 'inferno-dom';
+import { render } from 'inferno';
 import CssModulesInclusion from './CssModulesInclusion';
 
 describe('css modules inclusion', () => {
   it('renders without crashing', () => {
     const div = document.createElement('div');
-    InfernoDOM.render(<CssModulesInclusion />, div);
+    render(<CssModulesInclusion />, div);
   });
 });

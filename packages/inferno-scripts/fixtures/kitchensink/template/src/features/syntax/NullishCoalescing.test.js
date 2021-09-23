@@ -6,14 +6,14 @@
  */
 
 import Inferno from 'inferno';
-import InfernoDOM from 'inferno-dom';
+import { render } from 'inferno';
 import NullishCoalescing from './NullishCoalescing';
 
 describe('nullish coalescing', () => {
   it('renders without crashing', () => {
     const div = document.createElement('div');
     return new Promise(resolve => {
-      InfernoDOM.render(<NullishCoalescing onReady={resolve} />, div);
+      render(<NullishCoalescing onReady={resolve} />, div);
     });
   });
 });

@@ -6,20 +6,20 @@
  */
 
 import Inferno from 'inferno';
-import InfernoDOM from 'inferno-dom';
+import { render } from 'inferno';
 import SvgComponent, { SvgComponentWithRef } from './SvgComponent';
 
 describe('svg component', () => {
   it('renders without crashing', () => {
     const div = document.createElement('div');
-    InfernoDOM.render(<SvgComponent />, div);
+    render(<SvgComponent />, div);
     expect(div.textContent).toBe('logo.svg');
   });
 
   it('svg root element equals the passed ref', () => {
     const div = document.createElement('div');
     const someRef = Inferno.createRef();
-    InfernoDOM.render(<SvgComponentWithRef ref={someRef} />, div);
+    render(<SvgComponentWithRef ref={someRef} />, div);
     const svgElement = div.getElementsByTagName('svg');
     expect(svgElement).toHaveLength(1);
     expect(svgElement[0]).toBe(someRef.current);

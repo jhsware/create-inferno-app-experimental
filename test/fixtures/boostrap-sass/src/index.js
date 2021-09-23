@@ -1,5 +1,5 @@
 import Inferno from 'inferno';
-import InfernoDOM from 'inferno-dom';
+import { render } from 'inferno';
 import './index.sass';
 
-InfernoDOM.render(<div />, document.getElementById('root'));
+render(<div />, document.getElementById('root'));

@@ -26,11 +26,11 @@ yarn create inferno-app my-app --template typescript
 To add [TypeScript](https://www.typescriptlang.org/) to an existing Create Inferno App project, first install it:
 
 ```sh
-npm install --save typescript @types/node @types/inferno @types/inferno-dom @types/jest
+npm install --save typescript @types/node @types/inferno @types/jest
 
 # or
 
-yarn add typescript @types/node @types/inferno @types/inferno-dom @types/jest
+yarn add typescript @types/node @types/inferno @types/jest
 ```
 
 Next, rename any file to be a TypeScript file (e.g. `src/index.js` to `src/index.tsx`) and **restart your development server**!

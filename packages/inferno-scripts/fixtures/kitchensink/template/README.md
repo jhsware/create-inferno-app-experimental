@@ -28,7 +28,7 @@ Features are categorized by their scope:
 
 In it's most basic for this serve as a collection of unit tests on a single functionality.
 
-Unit tests are written in a `src/features/**/*.test.js` file located in the same folder as the feature they test, and usually consist of a `InfernoDOM.render` call.
+Unit tests are written in a `src/features/**/*.test.js` file located in the same folder as the feature they test, and usually consist of a `render` call.
 
 These tests are run by **jest** and the environment is `test`, so that it resembles how a **Create Inferno App** application is tested.
 

@@ -6,14 +6,14 @@
  */
 
 import Inferno from 'inferno';
-import InfernoDOM from 'inferno-dom';
+import { render } from 'inferno';
 import OptionalChaining from './OptionalChaining';
 
 describe('optional chaining', () => {
   it('renders without crashing', () => {
     const div = document.createElement('div');
     return new Promise(resolve => {
-      InfernoDOM.render(<OptionalChaining onReady={resolve} />, div);
+      render(<OptionalChaining onReady={resolve} />, div);
     });
   });
 });

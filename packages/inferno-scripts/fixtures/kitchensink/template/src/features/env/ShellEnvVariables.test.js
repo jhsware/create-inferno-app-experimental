@@ -6,12 +6,12 @@
  */
 
 import Inferno from 'inferno';
-import InfernoDOM from 'inferno-dom';
+import { render } from 'inferno';
 import ShellEnvVariables from './ShellEnvVariables';
 
 describe('shell env variables', () => {
   it('renders without crashing', () => {
     const div = document.createElement('div');
-    InfernoDOM.render(<ShellEnvVariables />, div);
+    render(<ShellEnvVariables />, div);
   });
 });

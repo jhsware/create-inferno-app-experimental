@@ -6,14 +6,14 @@
  */
 
 import Inferno from 'inferno';
-import InfernoDOM from 'inferno-dom';
+import { render } from 'inferno';
 import DefaultParameters from './DefaultParameters';
 
 describe('default parameters', () => {
   it('renders without crashing', () => {
     const div = document.createElement('div');
     return new Promise(resolve => {
-      InfernoDOM.render(<DefaultParameters onReady={resolve} />, div);
+      render(<DefaultParameters onReady={resolve} />, div);
     });
   });
 });

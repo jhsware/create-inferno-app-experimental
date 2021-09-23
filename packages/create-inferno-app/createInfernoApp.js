@@ -161,7 +161,7 @@ function init() {
             'Firefox',
             'Safari',
           ],
-          npmPackages: ['inferno', 'inferno-dom', 'inferno-scripts'],
+          npmPackages: ['inferno', 'inferno-scripts'],
           npmGlobalPackages: ['create-inferno-app'],
         },
         {
@@ -431,7 +431,7 @@ function run(
     getInstallPackage(version, originalDirectory),
     getTemplateInstallPackage(template, originalDirectory),
   ]).then(([packageToInstall, templateToInstall]) => {
-    const allDependencies = ['inferno', 'inferno-dom', packageToInstall];
+    const allDependencies = ['inferno', packageToInstall];
 
     console.log('Installing packages. This might take a couple of minutes.');
 
@@ -474,9 +474,7 @@ function run(
         }
 
         console.log(
-          `Installing ${chalk.cyan('inferno')}, ${chalk.cyan(
-            'inferno-dom'
-          )}, and ${chalk.cyan(packageInfo.name)}${
+          `Installing ${chalk.cyan('inferno')} and ${chalk.cyan(packageInfo.name)}${
             supportsTemplates ? ` with ${chalk.cyan(templateInfo.name)}` : ''
           }...`
         );
@@ -867,7 +865,7 @@ function checkAppName(appName) {
   }
 
   // TODO: there should be a single place that holds the dependencies
-  const dependencies = ['inferno', 'inferno-dom', 'inferno-scripts'].sort();
+  const dependencies = ['inferno', 'inferno-scripts'].sort();
   if (dependencies.includes(appName)) {
     console.error(
       chalk.red(
@@ -921,7 +919,6 @@ function setCaretRangeForRuntimeDeps(packageName) {
   }
 
   makeCaretRange(packageJson.dependencies, 'inferno');
-  makeCaretRange(packageJson.dependencies, 'inferno-dom');
 
   fs.writeFileSync(packagePath, JSON.stringify(packageJson, null, 2) + os.EOL);
 }

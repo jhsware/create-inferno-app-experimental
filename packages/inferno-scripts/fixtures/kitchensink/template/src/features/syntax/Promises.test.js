@@ -6,14 +6,14 @@
  */
 
 import Inferno from 'inferno';
-import InfernoDOM from 'inferno-dom';
+import { render } from 'inferno';
 
 describe('promises', () => {
   it('renders without crashing', () => {
     const div = document.createElement('div');
     return import('./Promises').then(({ default: Promises }) => {
       return new Promise(resolve => {
-        InfernoDOM.render(<Promises onReady={resolve} />, div);
+        render(<Promises onReady={resolve} />, div);
       });
     });
   });
