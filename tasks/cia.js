@@ -106,7 +106,8 @@ const scriptsFileName = cp
 const scriptsPath = path.join(packagesDir, 'inferno-scripts', scriptsFileName);
 
 // Now that we have packed them, call the global CLI.
-cp.execSync('npm cache clean');
+// This causes an error in npm 7.23.0
+// cp.execSync('npm cache clean');
 
 const args = process.argv.slice(2);
 
