@@ -8,9 +8,9 @@ TODO: Depends on react-refresh for robust hot reloading
 
 TODO: Investigate how to handle package dep
 - DONE prop-types (removed but left proptype defs as comments)
-- @testing-library/react
-- @babel/plugin-transform-react-display-name
-- @babel/preset-react
+- DONE @testing-library/react (removed)
+- DONE @babel/plugin-transform-react-display-name (removed)
+- DONE @babel/preset-react (removed)
   - try: babel-preset-inferno-app (does this need updating?)
 - babel-plugin-transform-react-remove-prop-types
 - eslint-plugin-react
