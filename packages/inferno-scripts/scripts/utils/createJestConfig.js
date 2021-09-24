@@ -29,8 +29,8 @@ module.exports = (resolve, rootDir, isEjecting) => {
 
     setupFiles: [
       isEjecting
-        ? 'inferno-app-polyfill/jsdom'
-        : require.resolve('inferno-app-polyfill/jsdom'),
+        ? 'react-app-polyfill/jsdom'
+        : require.resolve('reac-app-polyfill/jsdom'),
     ],
 
     setupFilesAfterEnv: setupTestsFile ? [setupTestsFile] : [],

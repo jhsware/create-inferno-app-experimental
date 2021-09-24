@@ -5,7 +5,7 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-import 'inferno-app-polyfill/ie9';
+import 'react-app-polyfill/ie9';
 import { Component } from 'inferno';
 import CompileErrorContainer from './containers/CompileErrorContainer';
 import RuntimeErrorContainer from './containers/RuntimeErrorContainer';
