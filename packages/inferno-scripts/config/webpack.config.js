@@ -41,7 +41,7 @@ const createEnvironmentHash = require('./webpack/persistentCache/createEnvironme
 // Source maps are resource heavy and can cause out of memory issue for large source files.
 const shouldUseSourceMap = process.env.GENERATE_SOURCEMAP !== 'false';
 
-const infernoRefreshRuntimeEntry = require.resolve('inferno-refresh/runtime');
+const infernoRefreshRuntimeEntry = require.resolve('react-refresh/runtime');
 const infernoRefreshWebpackPluginRuntimeEntry = require.resolve(
   '@pmmmwh/react-refresh-webpack-plugin'
 );
@@ -426,7 +426,7 @@ module.exports = function (webpackEnv) {
                 plugins: [
                   isEnvDevelopment &&
                     shouldUseInfernoRefresh &&
-                    require.resolve('inferno-refresh/babel'),
+                    require.resolve('react-refresh/babel'),
                 ].filter(Boolean),
                 // This is a feature of `babel-loader` for webpack (not Babel itself).
                 // It enables caching results in ./node_modules/.cache/babel-loader/
@@ -626,7 +626,7 @@ module.exports = function (webpackEnv) {
       // Otherwise Inferno will be compiled in the very slow development mode.
       new webpack.DefinePlugin(env.stringified),
       // Experimental hot reloading for Inferno .
-      // https://github.com/facebook/inferno/tree/main/packages/inferno-refresh
+      // https://github.com/facebook/inferno/tree/main/packages/react-refresh
       isEnvDevelopment &&
         shouldUseInfernoRefresh &&
         new InfernoRefreshWebpackPlugin({
