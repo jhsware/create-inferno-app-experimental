@@ -6,7 +6,7 @@
  */
 
 /*  */
-import { useEffect } from 'inferno';
+import { Component } from 'inferno';
 
 
 const overlayStyle = (theme) => ({
@@ -32,39 +32,41 @@ const overlayStyle = (theme) => ({
 
 let iframeWindow = null;
 
-function ErrorOverlay(props, { theme }) {
+class ErrorOverlay extends Component {
+  componentDidMount() {
+    window.addEventListener('keydown', this.onKeyDown);
+    if (iframeWindow) {
+      iframeWindow.addEventListener('keydown', this.onKeyDown);
+    }
+  }
 
-  const getIframeWindow = (element) => {
+  componentWillUnmount() {
+    window.removeEventListener('keydown', this.onKeyDown);
+    if (iframeWindow) {
+      iframeWindow.removeEventListener('keydown', this.onKeyDown);
+    }
+  }
+
+  getIframeWindow = (element) => {
     if (element) {
       const document = element.ownerDocument;
       iframeWindow = document.defaultView;
     }
-  };
-  const { shortcutHandler } = props;
+  }
 
-  useEffect(() => {
-    const onKeyDown = (e) => {
-      if (shortcutHandler) {
-        shortcutHandler(e.key);
-      }
-    };
-    window.addEventListener('keydown', onKeyDown);
-    if (iframeWindow) {
-      iframeWindow.addEventListener('keydown', onKeyDown);
+  onKeyDown = (e) => {
+    if (this.props.shortcutHandler) {
+      this.props.shortcutHandler(e.key);
     }
-    return () => {
-      window.removeEventListener('keydown', onKeyDown);
-      if (iframeWindow) {
-        iframeWindow.removeEventListener('keydown', onKeyDown);
-      }
-    };
-  }, [shortcutHandler]);
+  }
 
-  return (
-    <div style={overlayStyle(theme)} ref={getIframeWindow}>
-      {props.children}
-    </div>
-  );
+  render(props, { theme }) {
+    return (
+      <div style={overlayStyle(theme)} ref={this.getIframeWindow}>
+        {props.children}
+      </div>
+    );
+  }
 }
 
 export default ErrorOverlay;
