@@ -34,7 +34,6 @@ module.exports = function (api, opts, env) {
     opts.useESModules,
     isEnvDevelopment || isEnvProduction
   );
-  var isFlowEnabled = validateBoolOption('flow', opts.flow, true);
   var isTypeScriptEnabled = validateBoolOption(
     'typescript',
     opts.typescript,
@@ -87,31 +86,13 @@ module.exports = function (api, opts, env) {
           exclude: ['transform-typeof-symbol'],
         },
       ],
-      [
-        require('babel-preset-inferno-app').default,
-        {
-          // Adds component stack to warning messages
-          // Adds __self attribute to JSX which Inferno will use for some warnings
-          development: isEnvDevelopment || isEnvTest,
-          // Will use the native built-in instead of trying to polyfill
-          // behavior for any plugins that require one.
-          ...(opts.runtime !== 'automatic' ? { useBuiltIns: true } : {}),
-          runtime: opts.runtime || 'classic',
-        },
-      ],
       isTypeScriptEnabled && [require('@babel/preset-typescript').default],
     ].filter(Boolean),
     plugins: [
+      [require('babel-plugin-inferno'), { imports: true }],
       // Strip flow types before any other transform, emulating the behavior
       // order as-if the browser supported all of the succeeding features
       // https://github.com/facebook/create-inferno-app/pull/5182
-      // We will conditionally enable this plugin below in overrides as it clashes with
-      // @babel/plugin-proposal-decorators when using TypeScript.
-      // https://github.com/facebook/create-inferno-app/issues/5741
-      isFlowEnabled && [
-        require('@babel/plugin-transform-flow-strip-types').default,
-        false,
-      ],
       // Experimental macros support. Will be documented after it's had some time
       // in the wild.
       require('babel-plugin-macros'),
@@ -207,10 +188,6 @@ module.exports = function (api, opts, env) {
       require('@babel/plugin-proposal-nullish-coalescing-operator').default,
     ].filter(Boolean),
     overrides: [
-      isFlowEnabled && {
-        exclude: /\.tsx?$/,
-        plugins: [require('@babel/plugin-transform-flow-strip-types').default],
-      },
       isTypeScriptEnabled && {
         test: /\.tsx?$/,
         plugins: [
