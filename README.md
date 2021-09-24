@@ -7,7 +7,7 @@ TODO: How to handle createContext() in iframeScript.js?
 TODO: Depends on react-refresh for robust hot reloading
 
 TODO: Investigate how to handle package dep
-- prop-types
+- DONE prop-types (removed but left proptype defs as comments)
 - @testing-library/react
 - @babel/plugin-transform-react-display-name
 - @babel/preset-react

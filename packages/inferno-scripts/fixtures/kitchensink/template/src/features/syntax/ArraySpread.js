@@ -5,8 +5,7 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-import Inferno, { Component } from 'inferno';
-import PropTypes from 'prop-types';
+import { Component } from 'inferno';
 
 function load(users) {
   return [
@@ -18,9 +17,9 @@ function load(users) {
 }
 
 export default class ArraySpread extends Component {
-  static propTypes = {
-    onReady: PropTypes.func.isRequired,
-  };
+  // static propTypes = {
+  //   onReady: PropTypes.func.isRequired,
+  // };
 
   constructor(props) {
     super(props);

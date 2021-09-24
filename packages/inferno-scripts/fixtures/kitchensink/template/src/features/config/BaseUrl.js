@@ -6,13 +6,12 @@
  */
 
 import Inferno, { Component } from 'inferno';
-import PropTypes from 'prop-types';
 import load from 'absoluteLoad';
 
 export default class BaseUrl extends Component {
-  static propTypes = {
-    onReady: PropTypes.func.isRequired,
-  };
+  // static propTypes = {
+  //   onReady: PropTypes.func.isRequired,
+  // };
 
   constructor(props) {
     super(props);

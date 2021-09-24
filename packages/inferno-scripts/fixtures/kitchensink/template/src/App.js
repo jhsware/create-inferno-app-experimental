@@ -5,14 +5,13 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-import Inferno, { Component, createElement } from 'inferno';
-import PropTypes from 'prop-types';
+import { Component, createElement } from 'inferno';
 
 class BuiltEmitter extends Component {
-  static propTypes = {
-    error: PropTypes.string,
-    feature: PropTypes.func,
-  };
+  // static propTypes = {
+  //   error: PropTypes.string,
+  //   feature: PropTypes.func,
+  // };
 
   componentDidMount() {
     const { error, feature } = this.props;
