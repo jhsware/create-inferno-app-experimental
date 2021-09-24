@@ -6,7 +6,7 @@
  */
 
 /*  */
-import { useState } from 'inferno';
+import { Component } from 'inferno';
 
 
 const _collapsibleStyle = {
@@ -35,40 +35,47 @@ const collapsibleExpandedStyle = (theme) => ({
   marginBottom: '0.6em',
 });
 
+class Collapsible extends Component {
+  state = {
+    collapsed: true
+  }
 
-function Collapsible(props, { theme }) {
-  const [collapsed, setCollapsed] = useState(true);
+  toggleCollapsed = () => {
+    this.setState({
+      collapsed: !this.state.collapsed
+    });
+  }
 
-  const toggleCollapsed = () => {
-    setCollapsed(!collapsed);
-  };
+  render (props, { theme }) {
+    const count = props.children.length;
+    const { collapsed } = this.state;
 
-  const count = props.children.length;
-  return (
-    <div>
-      <button
-        onClick={toggleCollapsed}
-        style={
-          collapsed
-            ? collapsibleCollapsedStyle(theme)
-            : collapsibleExpandedStyle(theme)
-        }
-      >
-        {(collapsed ? '▶' : '▼') +
-          ` ${count} stack frames were ` +
-          (collapsed ? 'collapsed.' : 'expanded.')}
-      </button>
-      <div style={{ display: collapsed ? 'none' : 'block' }}>
-        {props.children}
+    return (
+      <div>
         <button
-          onClick={toggleCollapsed}
-          style={collapsibleExpandedStyle(theme)}
+          onClick={this.toggleCollapsed}
+          style={
+            collapsed
+              ? collapsibleCollapsedStyle(theme)
+              : collapsibleExpandedStyle(theme)
+          }
         >
-          {`▲ ${count} stack frames were expanded.`}
+          {(collapsed ? '▶' : '▼') +
+            ` ${count} stack frames were ` +
+            (collapsed ? 'collapsed.' : 'expanded.')}
         </button>
+        <div style={{ display: collapsed ? 'none' : 'block' }}>
+          {props.children}
+          <button
+            onClick={this.toggleCollapsed}
+            style={collapsibleExpandedStyle(theme)}
+          >
+            {`▲ ${count} stack frames were expanded.`}
+          </button>
+        </div>
       </div>
-    </div>
-  );
+    );
+  }
 }
 
 export default Collapsible;
