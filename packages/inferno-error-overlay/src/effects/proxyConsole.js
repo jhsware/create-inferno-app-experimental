@@ -5,16 +5,16 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-/*       */
+/* @flow */
 
-                     
-                          
-                            
-                      
-  
-const infernoFrameStack                        = [];
+type InfernoFrame = {
+  fileName: string | null,
+  lineNumber: number | null,
+  name: string | null,
+};
+const infernoFrameStack: Array<InfernoFrame[]> = [];
 
-                             
+export type { InfernoFrame };
 
 // This is a stripped down barebones version of this proposal:
 // https://gist.github.com/sebmarkbage/bdefa100f19345229d526d0fdd22830f
@@ -41,10 +41,10 @@ const unregisterInfernoStack = () => {
   }
 };
 
-                                                                              
+type ConsoleProxyCallback = (message: string, frames: InfernoFrame[]) => void;
 const permanentRegister = function proxyConsole(
-  type        ,
-  callback                      
+  type: string,
+  callback: ConsoleProxyCallback
 ) {
   if (typeof console !== 'undefined') {
     const orig = console[type];

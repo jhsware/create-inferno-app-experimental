@@ -5,12 +5,12 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-/*       */
+/* @flow */
 let boundErrorHandler = null;
 
-                                            
+type ErrorCallback = (error: Error) => void;
 
-function errorHandler(callback               , e       )       {
+function errorHandler(callback: ErrorCallback, e: Event): void {
   // $FlowFixMe
   if (!e.error) {
     return;
@@ -26,7 +26,7 @@ function errorHandler(callback               , e       )       {
   }
 }
 
-function registerUnhandledError(target             , callback               ) {
+function registerUnhandledError(target: EventTarget, callback: ErrorCallback) {
   if (boundErrorHandler !== null) {
     return;
   }
@@ -34,7 +34,7 @@ function registerUnhandledError(target             , callback               ) {
   target.addEventListener('error', boundErrorHandler);
 }
 
-function unregisterUnhandledError(target             ) {
+function unregisterUnhandledError(target: EventTarget) {
   if (boundErrorHandler === null) {
     return;
   }

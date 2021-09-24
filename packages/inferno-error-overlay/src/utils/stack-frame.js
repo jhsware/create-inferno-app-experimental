@@ -5,18 +5,18 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-/*       */
+/* @flow */
 
 /** A container holding a script line. */
 class ScriptLine {
   /** The line number of this line of source. */
-  lineNumber        ;
+  lineNumber: number;
   /** The content (or value) of this line of source. */
-  content        ;
+  content: string;
   /** Whether or not this line should be highlighted. Particularly useful for error reporting with context. */
-  highlight         ;
+  highlight: boolean;
 
-  constructor(lineNumber        , content        , highlight          = false) {
+  constructor(lineNumber: number, content: string, highlight: boolean = false) {
     this.lineNumber = lineNumber;
     this.content = content;
     this.highlight = highlight;
@@ -27,30 +27,30 @@ class ScriptLine {
  * A representation of a stack frame.
  */
 class StackFrame {
-  functionName               ;
-  fileName               ;
-  lineNumber               ;
-  columnNumber               ;
+  functionName: string | null;
+  fileName: string | null;
+  lineNumber: number | null;
+  columnNumber: number | null;
 
-  _originalFunctionName               ;
-  _originalFileName               ;
-  _originalLineNumber               ;
-  _originalColumnNumber               ;
+  _originalFunctionName: string | null;
+  _originalFileName: string | null;
+  _originalLineNumber: number | null;
+  _originalColumnNumber: number | null;
 
-  _scriptCode                     ;
-  _originalScriptCode                     ;
+  _scriptCode: ScriptLine[] | null;
+  _originalScriptCode: ScriptLine[] | null;
 
   constructor(
-    functionName                = null,
-    fileName                = null,
-    lineNumber                = null,
-    columnNumber                = null,
-    scriptCode                      = null,
-    sourceFunctionName                = null,
-    sourceFileName                = null,
-    sourceLineNumber                = null,
-    sourceColumnNumber                = null,
-    sourceScriptCode                      = null
+    functionName: string | null = null,
+    fileName: string | null = null,
+    lineNumber: number | null = null,
+    columnNumber: number | null = null,
+    scriptCode: ScriptLine[] | null = null,
+    sourceFunctionName: string | null = null,
+    sourceFileName: string | null = null,
+    sourceLineNumber: number | null = null,
+    sourceColumnNumber: number | null = null,
+    sourceScriptCode: ScriptLine[] | null = null
   ) {
     if (functionName && functionName.indexOf('Object.') === 0) {
       functionName = functionName.slice('Object.'.length);
@@ -84,7 +84,7 @@ class StackFrame {
   /**
    * Returns the name of this function.
    */
-  getFunctionName()         {
+  getFunctionName(): string {
     return this.functionName || '(anonymous function)';
   }
 
@@ -92,7 +92,7 @@ class StackFrame {
    * Returns the source of the frame.
    * This contains the file name, line number, and column number when available.
    */
-  getSource()         {
+  getSource(): string {
     let str = '';
     if (this.fileName != null) {
       str += this.fileName + ':';
@@ -109,7 +109,7 @@ class StackFrame {
   /**
    * Returns a pretty version of this stack frame.
    */
-  toString()         {
+  toString(): string {
     const functionName = this.getFunctionName();
     const source = this.getSource();
     return `${functionName}${source ? ` (${source})` : ``}`;

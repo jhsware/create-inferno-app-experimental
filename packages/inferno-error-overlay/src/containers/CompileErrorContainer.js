@@ -5,27 +5,27 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-/*       */
+/* @flow */
 import ErrorOverlay from '../components/ErrorOverlay';
 import Footer from '../components/Footer';
 import Header from '../components/Header';
 import CodeBlock from '../components/CodeBlock';
 import generateAnsiHTML from '../utils/generateAnsiHTML';
 import parseCompileError from '../utils/parseCompileError';
-                                                                
+import type { ErrorLocation } from '../utils/parseCompileError';
 
 const codeAnchorStyle = {
   cursor: 'pointer',
 };
 
-                                        
-                
-                                                   
-   
+type CompileErrorContainerPropsType = {|
+  error: string,
+  editorHandler: (errorLoc: ErrorLocation) => void,
+|};
 
-function CompileErrorContainer(props                                , { theme }) {
+function CompileErrorContainer(props: CompileErrorContainerPropsType, { theme }) {
   const { error, editorHandler } = props;
-  const errLoc                 = parseCompileError(error);
+  const errLoc: ?ErrorLocation = parseCompileError(error);
   const canOpenInEditor = errLoc !== null && editorHandler !== null;
   return (
     <ErrorOverlay>

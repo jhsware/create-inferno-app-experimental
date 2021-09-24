@@ -5,8 +5,8 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-/*       */
-function removeNextBr(parent, component          ) {
+/* @flow */
+function removeNextBr(parent, component: ?Element) {
   while (component != null && component.tagName.toLowerCase() !== 'br') {
     component = component.nextElementSibling;
   }
@@ -15,7 +15,7 @@ function removeNextBr(parent, component          ) {
   }
 }
 
-function absolutifyCaret(component      ) {
+function absolutifyCaret(component: Node) {
   const ccn = component.childNodes;
   for (let index = 0; index < ccn.length; ++index) {
     const c = ccn[index];

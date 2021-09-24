@@ -5,15 +5,15 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-/*       */
+/* @flow */
 import Inferno, { Component } from 'inferno';
 import StackFrame from './StackFrame';
 import Collapsible from '../components/Collapsible';
 import { isInternalFile } from '../utils/isInternalFile';
 import { isBultinErrorName } from '../utils/isBultinErrorName';
 
-                                                                         
-                                                                
+import type { StackFrame as StackFrameType } from '../utils/stack-frame';
+import type { ErrorLocation } from '../utils/parseCompileError';
 
 const traceStyle = {
   fontSize: '1em',
@@ -22,14 +22,14 @@ const traceStyle = {
   overflow: 'auto',
 };
 
-               
-                                
-                    
-                      
-                                                   
-   
+type Props = {|
+  stackFrames: StackFrameType[],
+  errorName: string,
+  contextSize: number,
+  editorHandler: (errorLoc: ErrorLocation) => void,
+|};
 
-class StackTrace extends Component        {
+class StackTrace extends Component<Props> {
   renderFrames() {
     const { stackFrames, errorName, contextSize, editorHandler } = this.props;
     const renderedFrames = [];

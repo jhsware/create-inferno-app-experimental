@@ -5,10 +5,10 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-/*       */
-                                                            
+/* @flow */
+import type { InfernoFrame } from '../effects/proxyConsole';
 
-function stripInlineStacktrace(message        )         {
+function stripInlineStacktrace(message: string): string {
   return message
     .split('\n')
     .filter(line => !line.match(/^\s*in/))
@@ -16,9 +16,9 @@ function stripInlineStacktrace(message        )         {
 }
 
 function massage(
-  warning        ,
-  frames                
-)                                     {
+  warning: string,
+  frames: InfernoFrame[]
+): { message: string, stack: string } {
   let message = stripInlineStacktrace(warning);
 
   // Reassemble the stack with full filenames provided by Inferno

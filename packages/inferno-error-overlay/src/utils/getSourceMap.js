@@ -5,7 +5,7 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-/*       */
+/* @flow */
 import { SourceMapConsumer } from 'source-map';
 
 /**
@@ -14,7 +14,7 @@ import { SourceMapConsumer } from 'source-map';
  * This exposes methods which will be indifferent to changes made in <code>{@link https://github.com/mozilla/source-map source-map}</code>.
  */
 class SourceMap {
-  __source_map                   ;
+  __source_map: SourceMapConsumer;
 
   // $FlowFixMe
   constructor(sourceMap) {
@@ -27,9 +27,9 @@ class SourceMap {
    * @param {number} column The column of the generated code position.
    */
   getOriginalPosition(
-    line        ,
-    column        
-  )                                                   {
+    line: number,
+    column: number
+  ): { source: string, line: number, column: number } {
     const {
       line: l,
       column: c,
@@ -48,10 +48,10 @@ class SourceMap {
    * @param {number} column The column of the original code position.
    */
   getGeneratedPosition(
-    source        ,
-    line        ,
-    column        
-  )                                   {
+    source: string,
+    line: number,
+    column: number
+  ): { line: number, column: number } {
     const { line: l, column: c } = this.__source_map.generatedPositionFor({
       source,
       line,
@@ -67,19 +67,19 @@ class SourceMap {
    * Returns the code for a given source file name.
    * @param {string} sourceName The name of the source file.
    */
-  getSource(sourceName        )         {
+  getSource(sourceName: string): string {
     return this.__source_map.sourceContentFor(sourceName);
   }
 
-  getSources()           {
+  getSources(): string[] {
     return this.__source_map.sources;
   }
 }
 
 function extractSourceMapUrl(
-  fileUri        ,
-  fileContents        
-)                  {
+  fileUri: string,
+  fileContents: string
+): Promise<string> {
   const regex = /\/\/[#@] ?sourceMappingURL=([^\s'"]+)\s*$/gm;
   let match = null;
   for (;;) {
@@ -101,9 +101,9 @@ function extractSourceMapUrl(
  * @param {string} fileContents The contents of the source file.
  */
 async function getSourceMap(
-  fileUri        ,
-  fileContents        
-)                     {
+  fileUri: string,
+  fileContents: string
+): Promise<SourceMap> {
   let sm = await extractSourceMapUrl(fileUri, fileContents);
   if (sm.indexOf('data:') === 0) {
     const base64 = /^data:application\/json;([\w=:"-]+;)*base64,/;

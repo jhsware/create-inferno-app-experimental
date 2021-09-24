@@ -5,10 +5,10 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-/*       */
-                                       
+/* @flow */
+import type { Theme } from '../styles';
 
-const closeButtonStyle = (theme       ) => ({
+const closeButtonStyle = (theme: Theme) => ({
   color: theme.closeColor,
   lineHeight: '1rem',
   fontSize: '1.5rem',
@@ -19,11 +19,11 @@ const closeButtonStyle = (theme       ) => ({
   top: 0,
 });
 
-                              
-                    
-   
+type CloseButtonPropsType = {|
+  close: () => void,
+|};
 
-function CloseButton({ close }                      , { theme }) {
+function CloseButton({ close }: CloseButtonPropsType, { theme }) {
   return (
     <span
       title="Click or press Escape to dismiss."

@@ -5,16 +5,16 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-/*       */
+/* @flow */
 function getPrettyURL(
-  sourceFileName         ,
-  sourceLineNumber         ,
-  sourceColumnNumber         ,
-  fileName         ,
-  lineNumber         ,
-  columnNumber         ,
-  compiled         
-)         {
+  sourceFileName: ?string,
+  sourceLineNumber: ?number,
+  sourceColumnNumber: ?number,
+  fileName: ?string,
+  lineNumber: ?number,
+  columnNumber: ?number,
+  compiled: boolean
+): string {
   let prettyURL;
   if (!compiled && sourceFileName && typeof sourceLineNumber === 'number') {
     // Remove everything up to the first /src/ or /node_modules/

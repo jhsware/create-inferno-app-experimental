@@ -5,13 +5,13 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-/*       */
+/* @flow */
 import StackFrame from './stack-frame';
 import { getSourceMap } from './getSourceMap';
 import { getLinesAround } from './getLinesAround';
 import path from 'path';
 
-function count(search        , string        )         {
+function count(search: string, string: string): number {
   // Count starts at -1 because a do-while loop always runs at least once
   let count = -1,
     index = -1;
@@ -32,10 +32,10 @@ function count(search        , string        )         {
  * @param {number} [fileContents=3] The number of lines to provide before and after the line specified in the <code>StackFrame</code>.
  */
 async function unmap(
-  _fileUri                                            ,
-  frames              ,
-  contextLines         = 3
-)                        {
+  _fileUri: string | { uri: string, contents: string },
+  frames: StackFrame[],
+  contextLines: number = 3
+): Promise<StackFrame[]> {
   let fileContents = typeof _fileUri === 'object' ? _fileUri.contents : null;
   let fileUri = typeof _fileUri === 'object' ? _fileUri.uri : _fileUri;
   if (fileContents == null) {
@@ -63,7 +63,7 @@ async function unmap(
     if (fileName == null) {
       return frame;
     }
-    const fN         = fileName;
+    const fN: string = fileName;
     const source = map
       .getSources()
       // Prepare path for normalization; see comment above for reasoning.

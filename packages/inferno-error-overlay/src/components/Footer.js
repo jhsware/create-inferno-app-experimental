@@ -5,22 +5,22 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-/*       */
-                                       
+/* @flow */
+import type { Theme } from '../styles';
 
-const footerStyle = (theme       ) => ({
+const footerStyle = (theme: Theme) => ({
   fontFamily: 'sans-serif',
   color: theme.footer,
   marginTop: '0.5rem',
   flex: '0 0 auto',
 });
 
-                         
-                
-                 
-   
+type FooterPropsType = {|
+  line1: string,
+  line2?: string,
+|};
 
-function Footer(props                 , { theme }) {
+function Footer(props: FooterPropsType, { theme }) {
   return (
     <div style={footerStyle(theme)}>
       {props.line1}
