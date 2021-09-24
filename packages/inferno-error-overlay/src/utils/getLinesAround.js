@@ -5,7 +5,7 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-/* @flow */
+/*  */
 import { ScriptLine } from './stack-frame';
 
 /**
@@ -15,10 +15,10 @@ import { ScriptLine } from './stack-frame';
  * @param {string[] | string} lines The source code.
  */
 function getLinesAround(
-  line: number,
-  count: number,
-  lines: string[] | string
-): ScriptLine[] {
+  line,
+  count,
+  lines
+) {
   if (typeof lines === 'string') {
     lines = lines.split('\n');
   }

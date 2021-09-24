@@ -1,11 +1,6 @@
-// @flow
+// 
 import Anser from 'anser';
 
-export type ErrorLocation = {|
-  fileName: string,
-  lineNumber: number,
-  colNumber?: number,
-|};
 
 const filePathRegex = /^\.(\/[^/\n ]+)+\.[^/\n ]+$/;
 
@@ -22,14 +17,14 @@ const lineNumberRegexes = [
 
 // Based on error formatting of webpack
 // https://github.com/webpack/webpack/blob/v3.5.5/lib/Stats.js#L183-L217
-function parseCompileError(message: string): ?ErrorLocation {
-  const lines: Array<string> = message.split('\n');
-  let fileName: string = '';
-  let lineNumber: number = 0;
-  let colNumber: number = 0;
+function parseCompileError(message) {
+  const lines = message.split('\n');
+  let fileName = '';
+  let lineNumber = 0;
+  let colNumber = 0;
 
   for (let i = 0; i < lines.length; i++) {
-    const line: string = Anser.ansiToText(lines[i]).trim();
+    const line = Anser.ansiToText(lines[i]).trim();
     if (!line) {
       continue;
     }
@@ -40,7 +35,7 @@ function parseCompileError(message: string): ?ErrorLocation {
 
     let k = 0;
     while (k < lineNumberRegexes.length) {
-      const match: ?Array<string> = line.match(lineNumberRegexes[k]);
+      const match = line.match(lineNumberRegexes[k]);
       if (match) {
         lineNumber = parseInt(match[1], 10);
         // colNumber starts with 0 and hence add 1

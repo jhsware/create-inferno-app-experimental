@@ -5,7 +5,7 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-/* @flow */
+/*  */
 import StackFrame from './stack-frame';
 import { getSourceMap } from './getSourceMap';
 import { getLinesAround } from './getLinesAround';
@@ -17,11 +17,11 @@ import { settle } from 'settle-promise';
  * @param {number} [contextLines=3] The number of lines to provide before and after the line specified in the <code>StackFrame</code>.
  */
 async function map(
-  frames: StackFrame[],
-  contextLines: number = 3
-): Promise<StackFrame[]> {
-  const cache: any = {};
-  const files: string[] = [];
+  frames,
+  contextLines = 3
+) {
+  const cache = {};
+  const files = [];
   frames.forEach(frame => {
     const { fileName } = frame;
     if (fileName == null) {

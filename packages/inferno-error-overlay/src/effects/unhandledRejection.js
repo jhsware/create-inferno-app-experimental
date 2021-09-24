@@ -5,15 +5,14 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-/* @flow */
+/*  */
 let boundRejectionHandler = null;
 
-type ErrorCallback = (error: Error) => void;
 
 function rejectionHandler(
-  callback: ErrorCallback,
-  e: PromiseRejectionEvent
-): void {
+  callback,
+  e
+) {
   if (e == null || e.reason == null) {
     return callback(new Error('Unknown'));
   }
@@ -27,8 +26,8 @@ function rejectionHandler(
 }
 
 function registerUnhandledRejection(
-  target: EventTarget,
-  callback: ErrorCallback
+  target,
+  callback
 ) {
   if (boundRejectionHandler !== null) {
     return;
@@ -38,7 +37,7 @@ function registerUnhandledRejection(
   target.addEventListener('unhandledrejection', boundRejectionHandler);
 }
 
-function unregisterUnhandledRejection(target: EventTarget) {
+function unregisterUnhandledRejection(target) {
   if (boundRejectionHandler === null) {
     return;
   }

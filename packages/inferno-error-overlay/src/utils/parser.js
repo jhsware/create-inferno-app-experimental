@@ -5,13 +5,13 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-/* @flow */
+/*  */
 import StackFrame from './stack-frame';
 
 const regexExtractLocation = /\(?(.+?)(?::(\d+))?(?::(\d+))?\)?$/;
 
 // $FlowFixMe
-function extractLocation(token: string): [string, number, number] {
+function extractLocation(token) {
   return (
     regexExtractLocation
       .exec(token)
@@ -30,7 +30,7 @@ function extractLocation(token: string): [string, number, number] {
 const regexValidFrame_Chrome = /^\s*(at|in)\s.+(:\d+)/;
 const regexValidFrame_FireFox = /(^|@)\S+:\d+|.+line\s+\d+\s+>\s+(eval|Function).+/;
 
-function parseStack(stack: string[]): StackFrame[] {
+function parseStack(stack) {
   const frames = stack
     .filter(
       e => regexValidFrame_Chrome.test(e) || regexValidFrame_FireFox.test(e)
@@ -72,7 +72,7 @@ function parseStack(stack: string[]): StackFrame[] {
  * Turns an <code>Error</code>, or similar object, into a set of <code>StackFrame</code>s.
  * @alias parse
  */
-function parseError(error: Error | string | string[]): StackFrame[] {
+function parseError(error) {
   if (error == null) {
     throw new Error('You cannot pass a null object.');
   }

@@ -5,8 +5,8 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-/* @flow */
-function isBultinErrorName(errorName: ?string) {
+/*  */
+function isBultinErrorName(errorName) {
   switch (errorName) {
     case 'EvalError':
     case 'InternalError':

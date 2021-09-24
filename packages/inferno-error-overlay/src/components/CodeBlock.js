@@ -5,7 +5,7 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-/* @flow */
+/*  */
 
 const _preStyle = {
   position: 'relative',
@@ -22,12 +22,8 @@ const codeStyle = {
   fontFamily: 'Consolas, Menlo, monospace',
 };
 
-type CodeBlockPropsType = {|
-  main: boolean,
-  codeHTML: string,
-|};
 
-function CodeBlock({ main, codeHTML }: CodeBlockPropsType, { theme }) {
+function CodeBlock({ main, codeHTML }, { theme }) {
   const primaryPreStyle = {
     ..._preStyle,
     backgroundColor: theme.primaryPreBackground,
