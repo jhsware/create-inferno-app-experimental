@@ -175,11 +175,6 @@ module.exports = function (api, opts, env) {
           absoluteRuntime: absoluteRuntimePath,
         },
       ],
-      isEnvProduction && [
-        {
-          removeImport: true,
-        },
-      ],
       // Optional chaining and nullish coalescing are supported in @babel/preset-env,
       // but not yet supported in webpack due to support missing from acorn.
       // These can be removed once webpack has support.
