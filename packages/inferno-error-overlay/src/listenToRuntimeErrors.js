@@ -25,19 +25,12 @@ import {
 import { massage as massageWarning } from './utils/warnings';
 import getStackFrames from './utils/getStackFrames';
 
-import type { StackFrame } from './utils/stack-frame';
 
-const CONTEXT_SIZE: number = 3;
+const CONTEXT_SIZE = 3;
 
-export type ErrorRecord = {|
-  error: Error,
-  unhandledRejection: boolean,
-  contextSize: number,
-  stackFrames: StackFrame[],
-|};
 
-export const crashWithFrames = (crash: ErrorRecord => void) => (
-  error: Error,
+export const crashWithFrames = (crash) => (
+  error,
   unhandledRejection = false
 ) => {
   getStackFrames(error, unhandledRejection, CONTEXT_SIZE)
@@ -58,8 +51,8 @@ export const crashWithFrames = (crash: ErrorRecord => void) => (
 };
 
 export function listenToRuntimeErrors(
-  crash: ErrorRecord => void,
-  filename: string = '/static/js/bundle.js'
+  crash,
+  filename = '/static/js/bundle.js'
 ) {
   const crashWithFramesRunTime = crashWithFrames(crash);
 

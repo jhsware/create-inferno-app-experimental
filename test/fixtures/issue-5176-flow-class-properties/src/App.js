@@ -2,7 +2,7 @@ class App {
   constructor() {
     this.foo = this.foo.bind(this);
   }
-  foo: void => void;
+  foo;
   foo() {
     return 'bar';
   }

@@ -21,7 +21,7 @@ async function load() {
 // Regression test for https://github.com/facebook/create-inferno-app/issues/3055
 const x = async (
   /* prettier-ignore */
-  y: void
+  y
 ) => {
   const z = await y;
 };
