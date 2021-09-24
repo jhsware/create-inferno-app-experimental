@@ -32,7 +32,7 @@ const ForkTsCheckerWebpackPlugin =
   process.env.TSC_COMPILE_ON_ERROR === 'true'
     ? require('inferno-dev-utils/ForkTsCheckerWarningWebpackPlugin')
     : require('inferno-dev-utils/ForkTsCheckerWebpackPlugin');
-const InfernoRefreshWebpackPlugin = require('@pmmmwh/inferno-refresh-webpack-plugin');
+const InfernoRefreshWebpackPlugin = require('@pmmmwh/react-refresh-webpack-plugin');
 // @remove-on-eject-begin
 const getCacheIdentifier = require('inferno-dev-utils/getCacheIdentifier');
 // @remove-on-eject-end
@@ -43,7 +43,7 @@ const shouldUseSourceMap = process.env.GENERATE_SOURCEMAP !== 'false';
 
 const infernoRefreshRuntimeEntry = require.resolve('inferno-refresh/runtime');
 const infernoRefreshWebpackPluginRuntimeEntry = require.resolve(
-  '@pmmmwh/inferno-refresh-webpack-plugin'
+  '@pmmmwh/react-refresh-webpack-plugin'
 );
 const babelRuntimeEntry = require.resolve('babel-preset-inferno-app');
 const babelRuntimeEntryHelpers = require.resolve(
