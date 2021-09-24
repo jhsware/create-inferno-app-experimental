@@ -6,7 +6,7 @@
  */
 
 /*  */
-import Inferno, { PureComponent } from 'inferno';
+import { Component } from 'inferno';
 import ErrorOverlay from '../components/ErrorOverlay';
 import CloseButton from '../components/CloseButton';
 import NavigationBar from '../components/NavigationBar';
@@ -16,7 +16,7 @@ import Footer from '../components/Footer';
 
 
 
-class RuntimeErrorContainer extends PureComponent {
+class RuntimeErrorContainer extends Component {
   state = {
     currentIndex: 0,
   };
