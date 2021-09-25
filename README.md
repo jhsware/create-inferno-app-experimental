@@ -23,8 +23,6 @@ $ npm run build
 
 ## DEV NOTES:
 
-TODO: Figure out publishing workflow and settings
-
 TODO: Test features (help wanted, suggested solutions would be nice)
 - hot reloading - maintains state
 - hot restart - updates code but returns to initial state
@@ -34,6 +32,16 @@ TODO: Test features (help wanted, suggested solutions would be nice)
 - source-maps working in browser
 - source-maps working for server-side debugging
 - using typescript
+
+### Issues with `npm run start`
+TODO: `npm run start` rebuilds on changes but does not update in browser
+
+TODO: `npm run start` uses Inferno in production build, should use development build
+- index.esm.js:4 You are running production build of Inferno in development mode. Use dev:module entry point.
+
+### Other issues
+
+TODO: Figure out publishing workflow and settings
 
 TODO: Do we really need to import Inferno to use JSX in browser? (commit 8a95d60ec)
 
