@@ -54,6 +54,8 @@ module.exports = (resolve, rootDir, isEjecting) => {
     ],
     modulePaths: modules.additionalModulePaths || [],
     moduleNameMapper: {
+      '^react$': 'inferno-compat',
+      '^react-dom$': 'inferno-compat',
       '^.+\\.module\\.(css|sass|scss)$': 'identity-obj-proxy',
       ...(modules.jestAliases || {}),
     },

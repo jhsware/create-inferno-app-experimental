@@ -295,6 +295,10 @@ module.exports = function (webpackEnv) {
         .map(ext => `.${ext}`)
         .filter(ext => useTypeScript || !ext.includes('ts')),
       alias: {
+        // Support React compatibility mode
+        // https://github.com/infernojs/create-inferno-app/pull/27
+        react: 'inferno-compat',
+        'react-dom': 'inferno-compat',
         // Allows for better profiling with InfernoDevTools
         ...(isEnvProductionProfile && {
           'scheduler/tracing': 'scheduler/tracing-profiling',
