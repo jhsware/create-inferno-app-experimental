@@ -1,3 +1,4 @@
+import Inferno from 'inferno';
 import logo from './logo.svg';
 import './App.css';
 
