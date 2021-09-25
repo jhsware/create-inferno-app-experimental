@@ -2,7 +2,7 @@
 
 ** work in progress **
 
-Current state: You can start the sample app using `npm run start`
+Current state: You can start the sample app using `npm run start` and reloading the page updates the app.
 
 This is how you test the project:
 
@@ -22,6 +22,20 @@ $ npm run build
 ```
 
 ## DEV NOTES:
+
+TODO: Figure out publishing workflow and settings
+
+TODO: Test features (help wanted, suggested solutions would be nice)
+- hot reloading - maintains state
+- hot restart - updates code but returns to initial state
+- build for production
+- build for server-side rendering (development/production)
+- eject
+- source-maps working in browser
+- source-maps working for server-side debugging
+- using typescript
+
+TODO: Do we really need to import Inferno to use JSX in browser? (commit 8a95d60ec)
 
 TODO: Depends on react-refresh for robust hot reloading
 
