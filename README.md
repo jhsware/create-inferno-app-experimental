@@ -2,7 +2,7 @@
 
 ** work in progress **
 
-Current state: You can start the sample app using `npm run start` and reloading the page updates the app.
+Current state: You can start the sample app using `npm run start` and `npm run build`. Hot reloading of JS is not working.
 
 This is how you test the project:
 
@@ -35,13 +35,15 @@ TODO: Test features (help wanted, suggested solutions would be nice)
 ### Issues with `npm run start`
 TODO: `npm run start` rebuilds on changes but does not update in browser
   - The file updates in devtools but change isn't reflected in DOM (try changing a text in the page)
-  - Possible side effect of "index.esm.js:4 You are running production build of Inferno in development mode. Use dev:module entry point."
-  - Possibly related to https://github.com/infernojs/create-inferno-app/issues/15 (PR https://github.com/infernojs/create-inferno-app/pull/17/files)
-
-TODO: `npm run start` uses Inferno in production build, should use development build
-- index.esm.js:4 You are running production build of Inferno in development mode. Use dev:module entry point.
+  - To get hot reloading we probably need to port:
+    - https://github.com/pmmmwh/react-refresh-webpack-plugin
+    - https://github.com/facebook/react/tree/main/packages/react-refresh
+  
+TODO: We should support inferno-compat
+  - adding aliases as in old version of create-inferno-app breaks because we have refs to react (possibly due to react-refresh)
 
 ### Other issues
+TODO: Go through commits on old version to see if we have missed something
 
 TODO: Figure out publishing workflow and settings
 
@@ -56,6 +58,11 @@ TODO: Fix types  "types": "./lib/react-app.d.ts",
 TODO: Switch from node-sass to dart-sass?
 
 ### DONE
+DONE: `npm run start` uses Inferno in production build, should use development build
+- index.esm.js:4 You are running production build of Inferno in development mode. Use dev:module entry point.
+
+DONE: In browser we get: You are running production build of Inferno in development mode. Use dev:module entry point. (the old fix fails https://github.com/infernojs/create-inferno-app/blob/5e8c486752bbd8a7bd99609fd90ddb449b5b08e6/packages/inferno-scripts/config/webpack.config.dev.js#L154)
+
 DONE: Switched logo
 
 DONE: Go  through all imports
