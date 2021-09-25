@@ -1,6 +1,5 @@
 {
   "dependencies": {
-    "@types/react": "*",
     "inferno": "*",
     "typescript": "^3.9.5"
   }

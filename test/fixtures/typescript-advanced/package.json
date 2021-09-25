@@ -1,6 +1,5 @@
 {
   "dependencies": {
-    "@types/react": "*",
     "@types/jest": "*",
     "inferno": "*",
     "typescript": "^3.9.5"
