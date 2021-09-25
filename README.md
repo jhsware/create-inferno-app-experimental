@@ -4,6 +4,23 @@
 
 Current state: You can start the sample app using `npm run start`
 
+This is how you test the project:
+
+```
+$ git clone git@github.com:jhsware/create-inferno-app-experimental.git
+$ cd create-inferno-app-experimental
+$ npm i
+$ npm run start
+```
+
+The application code is in `packages/cia-template/template/src` and available commands are:
+
+```
+$ npm run start
+$ npm run build
+
+```
+
 ## DEV NOTES:
 
 TODO: Depends on react-refresh for robust hot reloading
@@ -15,6 +32,8 @@ TODO: Fix types  "types": "./lib/react-app.d.ts",
 TODO: Switch from node-sass to dart-sass?
 
 ### DONE
+DONE: Switched logo
+
 DONE: Go  through all imports
 
 DONE: Remove all refs to react-dom (currently referenced from @testing-library/react")
