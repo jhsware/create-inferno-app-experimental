@@ -18,7 +18,6 @@ The application code is in `packages/cia-template/template/src` and available co
 ```
 $ npm run start
 $ npm run build
-
 ```
 
 ## DEV NOTES:
@@ -35,6 +34,9 @@ TODO: Test features (help wanted, suggested solutions would be nice)
 
 ### Issues with `npm run start`
 TODO: `npm run start` rebuilds on changes but does not update in browser
+  - The file updates in devtools but change isn't reflected in DOM (try changing a text in the page)
+  - Possible side effect of "index.esm.js:4 You are running production build of Inferno in development mode. Use dev:module entry point."
+  - Possibly related to https://github.com/infernojs/create-inferno-app/issues/15 (PR https://github.com/infernojs/create-inferno-app/pull/17/files)
 
 TODO: `npm run start` uses Inferno in production build, should use development build
 - index.esm.js:4 You are running production build of Inferno in development mode. Use dev:module entry point.
