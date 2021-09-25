@@ -54,7 +54,6 @@ module.exports = (resolve, rootDir, isEjecting) => {
     ],
     modulePaths: modules.additionalModulePaths || [],
     moduleNameMapper: {
-      '^inferno-native$': 'inferno-native-web',
       '^.+\\.module\\.(css|sass|scss)$': 'identity-obj-proxy',
       ...(modules.jestAliases || {}),
     },

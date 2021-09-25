@@ -295,9 +295,6 @@ module.exports = function (webpackEnv) {
         .map(ext => `.${ext}`)
         .filter(ext => useTypeScript || !ext.includes('ts')),
       alias: {
-        // Support Inferno Native Web
-        // https://www.smashingmagazine.com/2016/08/a-glimpse-into-the-future-with-inferno-native-for-web/
-        'inferno-native': 'inferno-native-web',
         // Allows for better profiling with InfernoDevTools
         ...(isEnvProductionProfile && {
           'scheduler/tracing': 'scheduler/tracing-profiling',
