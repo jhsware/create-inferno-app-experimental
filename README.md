@@ -20,15 +20,27 @@ $ npm run start
 $ npm run build
 ```
 
+Development and releasing info: https://github.com/facebook/create-react-app/blob/main/CONTRIBUTING.md
+
 ## DEV NOTES:
 
-TODO: Test features (help wanted, suggested solutions would be nice)
-- hot reloading - maintains state
-- hot restart - updates code but returns to initial state
-- build for production
+We are probably closer to JS hot restart than hot reload
+
+STARTED: Test features (help wanted, suggested solutions would be nice)
+- STARTED: hot reloading - maintains state
+  - DONE: css-changes triggers hot reloading
+  - TODO: js changes do not trigger hot reloading
+    - requires porting react-refresh
+- TODO: hot restart - updates code but returns to initial state
+  - TODO: js changes do not trigger hot restart (INVESTIGATE: @havunen suggest forceUpdate has been used before)
+- DONE build for production
+  - Inferno is in production mode
+  - source maps are working
 - build for server-side rendering (development/production)
 - eject
-- source-maps working in browser
+- DONE source-maps working in browser
+  - available in dev mode
+  - available in prod mode
 - source-maps working for server-side debugging
 - using typescript
 
