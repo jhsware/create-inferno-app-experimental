@@ -630,6 +630,10 @@ module.exports = function (webpackEnv) {
       // during a production build.
       // Otherwise Inferno will be compiled in the very slow development mode.
       new webpack.DefinePlugin(env.stringified),
+      // This is necessary to emit hot updates (currently CSS only):
+      isEnvDevelopment && 
+        !shouldUseInfernoRefresh &&
+        new webpack.HotModuleReplacementPlugin(),
       // Experimental hot reloading for Inferno .
       // https://github.com/facebook/inferno/tree/main/packages/react-refresh
       isEnvDevelopment &&
