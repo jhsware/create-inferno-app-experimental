@@ -136,7 +136,7 @@ function init() {
       );
       console.log(
         `      ${chalk.cyan(
-          'https://github.com/facebook/create-inferno-app/issues/new'
+          'https://github.com/facebook/create-react-app/issues/new'
         )}`
       );
       console.log();
@@ -370,7 +370,7 @@ function install(root, useYarn, usePnp, dependencies, verbose, isOnline) {
       [].push.apply(args, dependencies);
 
       // Explicitly set cwd() to work around issues like
-      // https://github.com/facebook/create-inferno-app/issues/3326.
+      // https://github.com/facebook/create-react-app/issues/3326.
       // Unfortunately we can only do this for Yarn because npm support for
       // equivalent --prefix flag doesn't help with this issue.
       // This is why for npm, we run checkThatNpmCanReadCwd() early instead.
@@ -386,7 +386,7 @@ function install(root, useYarn, usePnp, dependencies, verbose, isOnline) {
       command = 'npm';
       args = [
         'install',
-        '--no-audit', // https://github.com/facebook/create-inferno-app/issues/11174
+        '--no-audit', // https://github.com/facebook/create-react-app/issues/11174
         '--save',
         '--save-exact',
         '--loglevel',
@@ -927,7 +927,7 @@ function setCaretRangeForRuntimeDeps(packageName) {
 // Also, if project contains remnant error logs from a previous
 // installation, lets remove them now.
 // We also special case IJ-based products .idea because it integrates with CRA:
-// https://github.com/facebook/create-inferno-app/pull/368#issuecomment-243446094
+// https://github.com/facebook/create-react-app/pull/368#issuecomment-243446094
 function isSafeToCreateProjectIn(root, name) {
   const validFiles = [
     '.DS_Store',
@@ -1014,7 +1014,7 @@ function getProxy() {
   }
 }
 
-// See https://github.com/facebook/create-inferno-app/pull/3355
+// See https://github.com/facebook/create-react-app/pull/3355
 function checkThatNpmCanReadCwd() {
   const cwd = process.cwd();
   let childOutput = null;

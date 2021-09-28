@@ -246,7 +246,7 @@ module.exports = {
     ],
     'inferno/no-danger-with-children': 'warn',
     // Disabled because of undesirable warnings
-    // See https://github.com/facebook/create-inferno-app/issues/5204 for
+    // See https://github.com/facebook/create-react-app/issues/5204 for
     // blockers until its re-enabled
     // 'inferno/no-deprecated': 'warn',
     'inferno/no-direct-mutation-state': 'warn',

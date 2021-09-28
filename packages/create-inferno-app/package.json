@@ -7,7 +7,7 @@
   "description": "Create Inferno apps with no build configuration.",
   "repository": {
     "type": "git",
-    "url": "https://github.com/facebook/create-inferno-app.git",
+    "url": "https://github.com/infernojs/create-inferno-app.git",
     "directory": "packages/create-inferno-app"
   },
   "license": "MIT",
@@ -15,7 +15,7 @@
     "node": ">=14"
   },
   "bugs": {
-    "url": "https://github.com/facebook/create-inferno-app/issues"
+    "url": "https://github.com/infernojs/create-inferno-app/issues"
   },
   "files": [
     "index.js",

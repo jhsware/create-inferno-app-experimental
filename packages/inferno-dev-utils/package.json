@@ -4,12 +4,12 @@
   "description": "webpack utilities used by Create Inferno App",
   "repository": {
     "type": "git",
-    "url": "https://github.com/facebook/create-inferno-app.git",
+    "url": "https://github.com/infernojs/create-inferno-app.git",
     "directory": "packages/inferno-dev-utils"
   },
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/facebook/create-inferno-app/issues"
+    "url": "https://github.com/infernojs/create-inferno-app/issues"
   },
   "engines": {
     "node": ">=14"

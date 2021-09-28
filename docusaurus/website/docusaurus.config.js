@@ -21,7 +21,7 @@ const siteConfig = {
           path: '../docs',
           sidebarPath: require.resolve('./sidebars.json'),
           editUrl:
-            'https://github.com/facebook/create-inferno-app/edit/main/docusaurus/website',
+            'https://github.com/infernojs/create-inferno-app/edit/main/docusaurus/website',
           showLastUpdateAuthor: true,
           showLastUpdateTime: true,
         },
@@ -83,7 +83,7 @@ const siteConfig = {
             },
             {
               label: 'GitHub Discussions',
-              href: 'https://github.com/facebook/create-inferno-app/discussions',
+              href: 'https://github.com/infernojs/create-inferno-app/discussions',
             },
             {
               label: 'Twitter',

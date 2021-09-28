@@ -9,7 +9,7 @@
   "description": "The base template for Create Inferno App.",
   "repository": {
     "type": "git",
-    "url": "https://github.com/facebook/create-inferno-app.git",
+    "url": "https://github.com/infernojs/create-inferno-app.git",
     "directory": "packages/cia-template"
   },
   "license": "MIT",
@@ -17,7 +17,7 @@
     "node": ">=14"
   },
   "bugs": {
-    "url": "https://github.com/facebook/create-inferno-app/issues"
+    "url": "https://github.com/infernojs/create-inferno-app/issues"
   },
   "files": [
     "template",

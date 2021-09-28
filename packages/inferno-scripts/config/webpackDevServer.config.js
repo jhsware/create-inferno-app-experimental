@@ -31,8 +31,8 @@ module.exports = function (proxy, allowedHost) {
     // https://medium.com/webpack/webpack-dev-server-middleware-security-issues-1489d950874a
     // However, it made several existing use cases such as development in cloud
     // environment or subdomains in development significantly more complicated:
-    // https://github.com/facebook/create-inferno-app/issues/2271
-    // https://github.com/facebook/create-inferno-app/issues/2233
+    // https://github.com/facebook/create-react-app/issues/2271
+    // https://github.com/facebook/create-react-app/issues/2233
     // While we're investigating better solutions, for now we will take a
     // compromise. Since our WDS configuration only serves files in the `public`
     // folder we won't consider accessing them a vulnerability. However, if you
@@ -66,9 +66,9 @@ module.exports = function (proxy, allowedHost) {
       // By default files from `contentBase` will not trigger a page reload.
       watch: {
         // Reportedly, this avoids CPU overload on some systems.
-        // https://github.com/facebook/create-inferno-app/issues/293
+        // https://github.com/facebook/create-react-app/issues/293
         // src/node_modules is not ignored to support absolute imports
-        // https://github.com/facebook/create-inferno-app/issues/1065
+        // https://github.com/facebook/create-react-app/issues/1065
         ignored: ignoredFiles(paths.appSrc),
       },
     },
@@ -95,7 +95,7 @@ module.exports = function (proxy, allowedHost) {
     host,
     historyApiFallback: {
       // Paths with dots should still use the history fallback.
-      // See https://github.com/facebook/create-inferno-app/issues/387.
+      // See https://github.com/facebook/create-react-app/issues/387.
       disableDotRule: true,
       index: paths.publicUrlOrPath,
     },
@@ -120,7 +120,7 @@ module.exports = function (proxy, allowedHost) {
       // previous service worker registered for the same host:port combination.
       // We do this in development to avoid hitting the production cache if
       // it used the same host and port.
-      // https://github.com/facebook/create-inferno-app/issues/2272#issuecomment-302832432
+      // https://github.com/facebook/create-react-app/issues/2272#issuecomment-302832432
       devServer.app.use(noopServiceWorkerMiddleware(paths.publicUrlOrPath));
     },
   };

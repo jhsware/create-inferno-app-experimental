@@ -292,7 +292,7 @@ module.exports = function (
     remove = 'uninstall';
     args = [
       'install',
-      '--no-audit', // https://github.com/facebook/create-inferno-app/issues/11174
+      '--no-audit', // https://github.com/facebook/create-react-app/issues/11174
       '--save',
       verbose && '--verbose',
     ].filter(e => e);
