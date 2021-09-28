@@ -33,14 +33,8 @@ STARTED: Test features (help wanted, suggested solutions would be nice)
     - requires porting react-refresh
 - TODO: hot restart - updates code but returns to initial state
   - TODO: js changes do not trigger hot restart (INVESTIGATE: @havunen suggest forceUpdate has been used before)
-- DONE build for production
-  - Inferno is in production mode
-  - source maps are working
 - build for server-side rendering (development/production)
 - eject
-- DONE source-maps working in browser
-  - available in dev mode
-  - available in prod mode
 - source-maps working for server-side debugging
 - using typescript
 
@@ -55,21 +49,32 @@ TODO: We should support inferno-compat
   - adding aliases as in old version of create-inferno-app breaks because we have refs to react (possibly due to react-refresh)
 
 ### Other issues
-TODO: Go through commits on old version to see if we have missed something
-
 TODO: Figure out publishing workflow and settings
 
-TODO: Do we really need to import Inferno to use JSX in browser? (commit 8a95d60ec)
-
 TODO: Depends on react-refresh for robust hot reloading
-
-TODO: Fix types "@types/react": "*",
-
-TODO: Fix types  "types": "./lib/react-app.d.ts",
 
 TODO: Switch from node-sass to dart-sass?
 
 ### DONE
+DEFER: Fix types "@types/react": "*",
+  (if this is a problem we will hear about it)
+
+DEFER: Fix types  "types": "./lib/react-app.d.ts",
+  (if this is a problem we will hear about it)
+
+DEFER: Do we really need to import Inferno to use JSX in browser? (commit 8a95d60ec)
+  (it is working so lets be happy with that)
+
+- DONE build for production
+  - Inferno is in production mode
+  - source maps are working
+- DONE source-maps working in browser
+  - available in dev mode
+  - available in prod mode
+
+DONE: Go through commits on old version to see if we have missed something
+  - compared all files to diff of changes done for v7 
+
 DONE: `npm run start` uses Inferno in production build, should use development build
 - index.esm.js:4 You are running production build of Inferno in development mode. Use dev:module entry point.
 
